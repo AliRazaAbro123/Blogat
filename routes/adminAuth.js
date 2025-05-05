@@ -1,5 +1,4 @@
 const express = require("express");
-const jwt = require("jsonwebtoken");
 
 const router = express.Router();
 
@@ -19,21 +18,7 @@ router.post("/adminAuthentication", (req, res) => {
   if (!isValid) {
     return res.status(401).json({ error: "Invalid credentials." });
   }
-
-  try {
-    const token = jwt.sign(
-      { adminName, adminEmail },
-      process.env.JWT_SECRET,
-      { expiresIn: "1h" } // Optional: set token expiration
-    );
-
-    res.cookie("token", token);
-
-    return res.redirect("/admin/adminPanel");
-  } catch (err) {
-    console.error("JWT signing error:", err);
-    return res.status(500).json({ error: "Internal server error." });
-  }
+  return res.redirect("/admin/adminPanel");
 });
 
 module.exports = router;
