@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Creation</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../stylesheets/blogCreation.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header" id="header">
+        <nav class="navbar container">
+          <a href="/" class="brand">BLOGAT</a>
+          <div class="burger" id="burger">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </div>
+          <span class="overlay"></span>
+          <div class="menu" id="menu">
+            <ul class="menu-inner">
+              <li class="menu-item">
+                <a class="menu-link" id="home" href="/">Home</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" id="aboutUs" href="/About-us">About Us</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" id="contactUs" href="/Contact-us"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" id="createBlog" href="/blogCreation"
+                  >Create Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <span><i class="bx bx-search search-toggle"></i></span>
+          <div class="search-block">
+            <form class="search-form">
+              <span><i class="bx bx-arrow-back search-cancel"></i></span>
+              <input
+                type="search"
+                name="search"
+                class="search-input"
+                placeholder="Search here..."
+              />
+            </form>
+          </div>
+        </nav>
+      </header>
+      <form action="/blog/blogCreation" method="post">
+        <div class="row1">
+          <input
+            type="text"
+            name="author"
+            placeholder="Author"
+            list="author"
+            value="Ali Raza"
+            required
+          />
+          <datalist id="author">
+            <option value="Ali Raza"></option>
+          </datalist>
+          <input type="text" name="title" placeholder="title" required />
+        </div>
+        <div class="row2">
+          <input
+            type="text"
+            list="category-list"
+            name="category"
+            placeholder="category"
+            required
+          />
+          <datalist id="category-list">
+            <option value="Technology"></option>
+            <option value="Travel"></option>
+            <option value="Sports"></option>
+            <option value="News"></option>
+            <option value="Education"></option>
+            <option value="Weather"></option>
+            <option value="SEO"></option>
+            <option value="Trends"></option>
+          </datalist>
+          <input
+            type="text"
+            list="category-list"
+            name="tags"
+            placeholder="Rags"
+            required
+          />
+        </div>
+        <div class="row3">
+          <input type="text" name="imageUri" placeholder="Image url" required />
+          <datalist id="category-list">
+            <option value="Technology"></option>
+            <option value="Travel"></option>
+            <option value="Sports"></option>
+            <option value="News"></option>
+            <option value="Education"></option>
+            <option value="Weather"></option>
+            <option value="SEO"></option>
+            <option value="Trends"></option>
+          </datalist>
+
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Content"
+            required
+          ></textarea>
+        </div>
+        <div class="row4">
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src="../javascript/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

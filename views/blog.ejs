@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="../stylesheets/blog.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header" id="header">
+        <nav class="navbar container">
+          <a href="/" class="brand">BLOGAT</a>
+          <div class="burger" id="burger">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </div>
+          <span class="overlay"></span>
+          <div class="menu" id="menu">
+            <ul class="menu-inner">
+              <li class="menu-item">
+                <a class="menu-link" id="home" href="/">Home</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" id="aboutUs" href="/About-us">About Us</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" id="contactUs" href="/Contact-us"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <span><i class="bx bx-search search-toggle"></i></span>
+          <div class="search-block">
+            <form class="search-form">
+              <span><i class="bx bx-arrow-back search-cancel"></i></span>
+              <input
+                type="search"
+                name="search"
+                class="search-input"
+                placeholder="Search here..."
+              />
+            </form>
+          </div>
+        </nav>
+      </header>
+      <div class="blogTop">
+        <div class="top">
+          <h3><%= blog.author %> <span><%= displayDate %></span></h3>
+          <h1><%= blog.title %></h1>
+          <p>
+            "Blogat: Your go-to destination for bold ideas and global stories.
+            Dive into handpicked content designed to inform, inspire, and spark
+            curiosity."
+          </p>
+          <button><%= blog.tags %></button>
+        </div>
+        <div class="image">
+          <img src="<%= blog.imageUri %>" alt="<%= blog.imageUri %>" />
+        </div>
+      </div>
+      <div class="blogContentCards">
+        <div class="content">
+          <p><%= blog.description %></p>
+        </div>
+        <div class="cards">
+          <div class="about">
+            <h3>ABOUT</h3>
+            <div class="dpinfo">
+              <div class="Image">
+                <img src="../assets/1717442704967.jpg" alt="" />
+              </div>
+              <div class="aboutContent">
+                <h1>Ali Raza</h1>
+                <h3>Fullstack MERN Web Developer</h3>
+              </div>
+            </div>
+            <p>
+              Ali Raza shares thoughtful reflections on life, culture, and
+              personal growth. His work blends creativity with experience,
+              offering unique and meaningful perspectives.
+            </p>
+            <h3><i class="fas fa-map-marker-alt"></i> Sindh, Pakistan 🇵🇰</h3>
+            <div class="links">
+              <a href="https://www.facebook.com/profile.php?id=61552489011042"
+                ><i class="fab fa-facebook fa-xl" title="Facebook"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/aliraza1121/ "
+                ><i class="fab fa-linkedin fa-xl" title="Linkedin"></i
+              ></a>
+              <a href="https://www.instagram.com/ali.stacker/"
+                ><i class="fab fa-instagram fa-xl" title="Instagram"></i
+              ></a>
+              <a href="https://github.com/AliRazaAbro123"
+                ><i class="fab fa-github fa-xl" title="GitHub"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footerTop">
+          <div class="titleSection">
+            <h1>BLOGAT</h1>
+            <p>
+              BLOGAT is a blog that provides a platform for individuals to share
+              their stories, insights, and experiences. It aims to foster
+              connection and understanding through the power of storytelling.
+            </p>
+          </div>
+          <div class="linksSection">
+            <a href="/">Home</a>
+            <a href="/About-us">About Us</a>
+            <a href="/Contact-us">Contact Us</a>
+          </div>
+          <div class="personalLinks">
+            <a href="https://www.facebook.com/profile.php?id=61552489011042"
+              ><i class="fab fa-facebook fa-xl" title="Facebook"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/aliraza1121/ "
+              ><i class="fab fa-linkedin fa-xl" title="Linkedin"></i
+            ></a>
+            <a href="https://www.instagram.com/ali.stacker/"
+              ><i class="fab fa-instagram fa-xl" title="Instagram"></i
+            ></a>
+            <a href="https://github.com/AliRazaAbro123"
+              ><i class="fab fa-github fa-xl" title="GitHub"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footerBottom">
+          <h1>Made with ❤️ by Ali Raza • © 2025</h1>
+          <div class="privicy">
+            <a href="/Privacy-policy">Privacy Policy</a>
+            <a href="/Terms-and-conditions">Terms and Conditions</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- Scripts are included at the end of the body for better performance -->
+    <script src="../javascript/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
