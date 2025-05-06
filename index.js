@@ -30,7 +30,7 @@ app.use("/blog/", blogRouter);
 app.use("/admin/", adminRouter);
 
 // Serverless support (for Vercel or Netlify)
-const PORT = process.env.PORT || 8088;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

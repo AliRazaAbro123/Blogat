@@ -45,7 +45,9 @@
               </li>
             </ul>
           </div>
-          <span><i class="bx bx-search search-toggle" title="Search Blogs"></i></span>
+          <span
+            ><i class="bx bx-search search-toggle" title="Search Blogs"></i
+          ></span>
           <div class="search-block">
             <form class="search-form">
               <span><i class="bx bx-arrow-back search-cancel"></i></span>
@@ -57,9 +59,6 @@
                 placeholder="Search here..."
               />
             </form>
-            <% blogs.reverse().forEach(blog => { %>
-              <%- include('partials/blogCard', { blog, displayDate }) %>
-            <% }); %>
           </div>
         </nav>
       </header>
@@ -77,40 +76,76 @@
           <div class="buttons">
             <button>
               <a href="/category/Travel"
-                ><i class="fa-solid fa-plane" style="color: orangered; margin-right: 5px;"></i> Travel
+                ><i
+                  class="fa-solid fa-plane"
+                  style="color: orangered; margin-right: 5px"
+                ></i>
+                Travel
               </a>
             </button>
             <button>
               <a href="/category/Technology"
-                ><i class="fa-solid fa-camera-retro" style="color: blue; margin-right: 5px;"></i> Technology</a
+                ><i
+                  class="fa-solid fa-camera-retro"
+                  style="color: blue; margin-right: 5px"
+                ></i>
+                Technology</a
               >
             </button>
             <button>
               <a href="/category/Sports"
-                ><i class="fa-solid fa-basketball" style="color: rebeccapurple; margin-right: 5px;"></i> Sports</a
+                ><i
+                  class="fa-solid fa-basketball"
+                  style="color: rebeccapurple; margin-right: 5px"
+                ></i>
+                Sports</a
               >
             </button>
             <button>
-              <a href="/category/News"><i class="fa-solid fa-file" style="color: brown; margin-right: 5px;"></i> News</a>
+              <a href="/category/News"
+                ><i
+                  class="fa-solid fa-file"
+                  style="color: brown; margin-right: 5px"
+                ></i>
+                News</a
+              >
             </button>
           </div>
           <div class="buttons">
             <button>
               <a href="/category/Weather"
-                ><i class="fa-solid fa-cloud-sun" style="color: green; margin-right: 5px;"></i> Weather</a
+                ><i
+                  class="fa-solid fa-cloud-sun"
+                  style="color: green; margin-right: 5px"
+                ></i>
+                Weather</a
               >
             </button>
             <button>
               <a href="/category/Education"
-                ><i class="fa-solid fa-laptop" style="color: crimson; margin-right: 5px;"></i> Education</a
+                ><i
+                  class="fa-solid fa-laptop"
+                  style="color: crimson; margin-right: 5px"
+                ></i>
+                Education</a
               >
             </button>
             <button>
-              <a href="/category/Seo"><i class="fas fa-chart-bar" style="color: darkgoldenrod; margin-right: 5px;"></i> SEO</a>
+              <a href="/category/Seo"
+                ><i
+                  class="fas fa-chart-bar"
+                  style="color: darkgoldenrod; margin-right: 5px"
+                ></i>
+                SEO</a
+              >
             </button>
             <button>
               <a href="/category/Seo"
-                ><i class="fa-solid fa-person-praying" style="color: blueviolet; margin-right: 5px;"></i>Trends</a
+                ><i
+                  class="fa-solid fa-person-praying"
+                  style="color: blueviolet; margin-right: 5px"
+                ></i
+                >Trends</a
               >
             </button>
           </div>
@@ -161,7 +196,10 @@
               personal growth. His work blends creativity with experience,
               offering unique and meaningful perspectives.
             </p>
-            <h3><i class="fas fa-map-marker-alt" title="Location"></i> Sindh, Pakistan 🇵🇰</h3>
+            <h3>
+              <i class="fas fa-map-marker-alt" title="Location"></i> Sindh,
+              Pakistan 🇵🇰
+            </h3>
             <div class="links">
               <a href="https://www.facebook.com/profile.php?id=61552489011042"
                 ><i class="fab fa-facebook fa-xl" title="Facebook"></i
@@ -226,18 +264,20 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      document.getElementById("searchInput").addEventListener("input", function () {
-    const query = this.value;
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", function () {
+          const query = this.value;
 
-    fetch(`/search?q=${encodeURIComponent(query)}`)
-      .then((res) => res.text())
-      .then((html) => {
-        document.getElementById("blogResults").innerHTML = html;
-      })
-      .catch((err) => {
-        console.error("Error fetching search results:", err);
-      });
-  });
+          fetch(`/search?q=${encodeURIComponent(query)}`)
+            .then((res) => res.text())
+            .then((html) => {
+              document.getElementById("blogResults").innerHTML = html;
+            })
+            .catch((err) => {
+              console.error("Error fetching search results:", err);
+            });
+        });
     </script>
   </body>
 </html>

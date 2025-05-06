@@ -2,7 +2,6 @@
 const express = require("express");
 const moment = require("moment");
 const blogModel = require("../models/blog");
-const jwt = require("jsonwebtoken");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -109,25 +108,6 @@ router.get("/category/:name", async (req, res) => {
   } catch (error) {
     console.error("Error fetching categorized blogs:", error);
     res.status(500).send("Server error");
-  }
-});
-
-router.get("/search", async (req, res) => {
-  const query = req.query.q || "";
-  try {
-    const blogs = await blogModel
-      .find({
-        $or: [
-          { title: { $regex: query, $options: "i" } },
-          { description: { $regex: query, $options: "i" } },
-          { tags: { $regex: query, $options: "i" } },
-        ],
-      })
-      .sort({ createdAt: -1 });
-
-    res.render("partials/searchResults", { blogs }); // partial view for AJAX
-  } catch (err) {
-    res.status(500).send("Error searching blogs");
   }
 });
 
