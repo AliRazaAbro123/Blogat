@@ -77,40 +77,76 @@
           <div class="buttons">
             <button>
               <a href="/category/Travel"
-                ><i class="fa-solid fa-plane"></i> Travel
+                ><i
+                  class="fa-solid fa-plane"
+                  style="color: orangered; margin-right: 5px"
+                ></i>
+                Travel
               </a>
             </button>
             <button>
               <a href="/category/Technology"
-                ><i class="fa-solid fa-camera-retro"></i> Technology</a
+                ><i
+                  class="fa-solid fa-camera-retro"
+                  style="color: blue; margin-right: 5px"
+                ></i>
+                Technology</a
               >
             </button>
             <button>
               <a href="/category/Sports"
-                ><i class="fa-solid fa-basketball"></i> Sports</a
+                ><i
+                  class="fa-solid fa-basketball"
+                  style="color: rebeccapurple; margin-right: 5px"
+                ></i>
+                Sports</a
               >
             </button>
             <button>
-              <a href="/category/News"><i class="fa-solid fa-file"></i> News</a>
+              <a href="/category/News"
+                ><i
+                  class="fa-solid fa-file"
+                  style="color: brown; margin-right: 5px"
+                ></i>
+                News</a
+              >
             </button>
           </div>
           <div class="buttons">
             <button>
               <a href="/category/Weather"
-                ><i class="fa-solid fa-cloud-sun"></i> Weather</a
+                ><i
+                  class="fa-solid fa-cloud-sun"
+                  style="color: green; margin-right: 5px"
+                ></i>
+                Weather</a
               >
             </button>
             <button>
               <a href="/category/Education"
-                ><i class="fa-solid fa-laptop"></i> Education</a
+                ><i
+                  class="fa-solid fa-laptop"
+                  style="color: crimson; margin-right: 5px"
+                ></i>
+                Education</a
               >
             </button>
             <button>
-              <a href="/category/Seo"><i class="fas fa-chart-bar"></i> SEO</a>
+              <a href="/category/Seo"
+                ><i
+                  class="fas fa-chart-bar"
+                  style="color: darkgoldenrod; margin-right: 5px"
+                ></i>
+                SEO</a
+              >
             </button>
             <button>
               <a href="/category/Seo"
-                ><i class="fa-solid fa-person-praying"></i>Trends</a
+                ><i
+                  class="fa-solid fa-person-praying"
+                  style="color: blueviolet; margin-right: 5px"
+                ></i
+                >Trends</a
               >
             </button>
           </div>
@@ -121,7 +157,7 @@
           <% categorizedBlogs.reverse().forEach(blog => { %>
           <div class="blog">
             <a href="/blog/<%= blog._id %>" class="Image">
-              <img src="../assets/bg_2.jpg" alt="" />
+              <img src="<%= blog.imageUri %>" alt="<%= blog.imageUri %>" />
             </a>
             <div class="content">
               <div class="tags">
@@ -162,16 +198,20 @@
             </p>
             <h3><i class="fas fa-map-marker-alt"></i> Sindh, Pakistan 🇵🇰</h3>
             <div class="links">
-              <a href="https://www.facebook.com/profile.php?id=61552489011042"
+              <a
+                href="https://www.facebook.com/profile.php?id=61552489011042"
+                target="_blank"
                 ><i class="fab fa-facebook fa-xl" title="Facebook"></i
               ></a>
-              <a href="https://www.linkedin.com/in/aliraza1121/ "
+              <a
+                href="https://www.linkedin.com/in/aliraza1121/ "
+                target="_blank"
                 ><i class="fab fa-linkedin fa-xl" title="Linkedin"></i
               ></a>
-              <a href="https://www.instagram.com/ali.stacker/"
+              <a href="https://www.instagram.com/ali.stacker/" target="_blank"
                 ><i class="fab fa-instagram fa-xl" title="Instagram"></i
               ></a>
-              <a href="https://github.com/AliRazaAbro123"
+              <a href="https://github.com/AliRazaAbro123" target="_blank"
                 ><i class="fab fa-github fa-xl" title="GitHub"></i
               ></a>
             </div>
@@ -194,16 +234,18 @@
             <a href="/Contact-us">Contact Us</a>
           </div>
           <div class="personalLinks">
-            <a href="https://www.facebook.com/profile.php?id=61552489011042"
+            <a
+              href="https://www.facebook.com/profile.php?id=61552489011042"
+              target="_blank"
               ><i class="fab fa-facebook fa-xl" title="Facebook"></i
             ></a>
-            <a href="https://www.linkedin.com/in/aliraza1121/ "
+            <a href="https://www.linkedin.com/in/aliraza1121/ " target="_blank"
               ><i class="fab fa-linkedin fa-xl" title="Linkedin"></i
             ></a>
-            <a href="https://www.instagram.com/ali.stacker/"
+            <a href="https://www.instagram.com/ali.stacker/" target="_blank"
               ><i class="fab fa-instagram fa-xl" title="Instagram"></i
             ></a>
-            <a href="https://github.com/AliRazaAbro123"
+            <a href="https://github.com/AliRazaAbro123" target="_blank"
               ><i class="fab fa-github fa-xl" title="GitHub"></i
             ></a>
           </div>
@@ -211,8 +253,8 @@
         <div class="footerBottom">
           <h1>Made with ❤️ by Ali Raza • © 2025</h1>
           <div class="privicy">
-            <a href="/Privacy-policy">Privacy Policy</a>
-            <a href="/Terms-and-conditions">Terms and Conditions</a>
+            <a href="/Privacy-policy">Policy</a>
+            <a href="/Terms-and-conditions">Terms</a>
           </div>
         </div>
       </footer>

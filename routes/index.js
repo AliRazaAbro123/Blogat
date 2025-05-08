@@ -1,123 +1,43 @@
 // routes/index.js
 const express = require("express");
-const moment = require("moment");
-const blogModel = require("../models/blog");
+const {
+  indexPage,
+  aboutPage,
+  contactPage,
+  privacyPage,
+  termsPage,
+  adminAuthPage,
+  adminPanelPage,
+  blogCreationPage,
+  blogPage,
+  categoryPage,
+  editPage,
+  nodemailerConfig,
+} = require("../controllers/pagesView");
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-  const blogs = await blogModel.find();
-  // moment js code fro date formating
-  const createdAt = moment(blogs.createdAt);
+router.get("/", indexPage);
 
-  let displayDate;
-  if (createdAt.isSame(moment(), "day")) {
-    displayDate = "Today";
-  } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
-    displayDate = "Yesterday";
-  } else {
-    displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
-  }
-  // moment js code fro date formating
-  res.render("index", { blogs, displayDate });
-});
+router.get("/About-us", aboutPage);
 
-router.get("/About-us", (req, res) => {
-  res.render("aboutUs");
-});
+router.get("/Contact-us", contactPage);
 
-router.get("/Contact-us", (req, res) => {
-  res.render("contactUs");
-});
+router.get("/privacy-policy", privacyPage);
 
-router.get("/privacy-policy", (req, res) => {
-  res.render("privacyPolicy");
-});
+router.get("/terms-and-conditions", termsPage);
 
-router.get("/terms-and-conditions", (req, res) => {
-  res.render("termsConditions");
-});
+router.get("/AdminAuth", adminAuthPage);
 
-router.get("/AdminAuth", (req, res) => {
-  res.render("adminAuth");
-});
+router.get("/admin/adminPanel", adminPanelPage);
 
-router.get("/admin/adminPanel", async (req, res) => {
-  const blogs = await blogModel.find();
+router.get("/blogCreation", blogCreationPage);
 
-  // moment js code fro date formating
-  const createdAt = moment(blogs.createdAt);
+router.get("/blog/:id", blogPage);
 
-  let displayDate;
-  if (createdAt.isSame(moment(), "day")) {
-    displayDate = "Today";
-  } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
-    displayDate = "Yesterday";
-  } else {
-    displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
-  }
-  // moment js code fro date formating
+router.get("/category/:name", categoryPage);
 
-  res.render("adminPanel", { blogs, displayDate });
-});
+router.get("/edit/:id", editPage);
 
-router.get("/blogCreation", (req, res) => {
-  res.render("blogCreation");
-});
-
-router.get("/blog/:id", async (req, res) => {
-  const blogId = req.params.id;
-  const blog = await blogModel.findOne({ _id: blogId });
-  if (!blog) {
-    return res.status(404).send("Blog not found");
-  }
-  // moment js code fro date formating
-  const createdAt = moment(blog.createdAt);
-
-  let displayDate;
-  if (createdAt.isSame(moment(), "day")) {
-    displayDate = "Today";
-  } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
-    displayDate = "Yesterday";
-  } else {
-    displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
-  }
-  // moment js code fro date formating
-  res.render("blog", { blog, displayDate });
-});
-
-router.get("/category/:name", async (req, res) => {
-  try {
-    const categoryName = req.params.name;
-
-    const categorizedBlogs = await blogModel.find({
-      category: { $regex: new RegExp(`^${categoryName}$`, "i") },
-    });
-    // moment js code fro date formating
-    const createdAt = moment(categorizedBlogs.createdAt);
-
-    let displayDate;
-    if (createdAt.isSame(moment(), "day")) {
-      displayDate = "Today";
-    } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
-      displayDate = "Yesterday";
-    } else {
-      displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
-    }
-    // moment js code fro date formating
-    res.render("category", { categorizedBlogs, displayDate, categoryName });
-  } catch (error) {
-    console.error("Error fetching categorized blogs:", error);
-    res.status(500).send("Server error");
-  }
-});
-
-router.get("/edit/:id", async (req, res) => {
-  const blogId = req.params.id;
-  const blog = await blogModel.findOne({ _id: blogId });
-  if (!blog) {
-    return res.status(404).send("Blog not found");
-  }
-  res.render("updation", { blog });
-});
+router.post("/userMessage", nodemailerConfig);
 
 module.exports = router;

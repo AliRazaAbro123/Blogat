@@ -232,7 +232,7 @@ img {
 
 .search-toggle,
 .search-cancel {
-  display: block;
+  display: none;
   cursor: pointer;
   font-size: 1.45rem;
   line-height: inherit;
