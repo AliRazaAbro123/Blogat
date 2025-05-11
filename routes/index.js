@@ -15,7 +15,6 @@ const {
   nodemailerConfig,
   logoutConfig,
 } = require("../controllers/pagesView");
-const isAdmin = require("../middlewares/verifyAdmin");
 const router = express.Router();
 
 router.get("/", indexPage);
@@ -30,19 +29,17 @@ router.get("/terms-and-conditions", termsPage);
 
 router.get("/AdminAuth", adminAuthPage);
 
-router.get("/admin/adminPanel", isAdmin, adminPanelPage);
+router.get("/admin/adminPanel", adminPanelPage);
 
-router.get("/blogCreation", isAdmin, blogCreationPage);
+router.get("/blogCreation", blogCreationPage);
 
 router.get("/blog/:id", blogPage);
 
 router.get("/category/:name", categoryPage);
 
-router.get("/edit/:id", isAdmin, editPage);
+router.get("/edit/:id", editPage);
 
-router.post("/userMessage", nodemailerConfig);
-
-router.get("/logout", logoutConfig);
+router.post("/userMessage", nodemailerConfig)
 
 
 module.exports = router;

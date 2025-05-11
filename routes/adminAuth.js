@@ -1,5 +1,4 @@
 const express = require("express");
-
 const router = express.Router();
 
 // POST /adminAuthentication
@@ -19,8 +18,6 @@ router.post("/adminAuthentication", (req, res) => {
     return res.status(401).json({ error: "Invalid credentials." });
   }
   // Set session
-  req.session.isAdmin = true;
-  
   return res.redirect("/admin/adminPanel");
 });
 

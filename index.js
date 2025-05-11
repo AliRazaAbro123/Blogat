@@ -1,7 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const expressSession = require("express-session");
-// Route imports
 const path = require("path");
 const IndexRouter = require("./routes/index");
 const adminRouter = require("./routes/adminAuth");
@@ -16,12 +14,6 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
-
-app.use(expressSession({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-}));
 
 DatabaseConnection();
 
