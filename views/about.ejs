@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BLOGAT | Contact Us</title>
-    <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg" type="image/x-icon">
+    <title>BLOGAT | About</title>
+    <link
+      rel="shortcut icon"
+      href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg"
+      type="image/x-icon"
+    />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -18,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../stylesheets/contactUs.css" />
+    <link rel="stylesheet" href="../stylesheets/aboutUs.css" />
   </head>
   <body>
     <div class="container">
@@ -37,11 +41,11 @@
                 <a class="menu-link" id="home" href="/">Home</a>
               </li>
               <li class="menu-item">
-                <a class="menu-link" id="aboutUs" href="/About-us">About Us</a>
+                <a class="menu-link" id="aboutUs" href="/About">About</a>
               </li>
               <li class="menu-item">
-                <a class="menu-link" id="contactUs" href="/Contact-us"
-                  >Contact Us</a
+                <a class="menu-link" id="contactUs" href="/Contact"
+                  >Contact</a
                 >
               </li>
             </ul>
@@ -61,44 +65,58 @@
         </nav>
       </header>
       <div class="content">
-        <div class="top">
-          <h1>Feel free to Contact Us</h1>
-          <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas nam, aut rerum, rem velit quis placeat amet voluptatum sed explicabo repellat qui, labore maiores quibusdam vel. Ipsam minima similique qui?</h3>
+        <h1>Hey, <span>Wonderful</span> to Meet You</h1>
+        <div class="images">
+          <img src="../assets/1717443476396.jpg" alt="Ali Raza" />
+          <img src="../assets/IMG-20231204-WA0005.jpg" alt="Ali Raza" />
+          <img
+            src="../assets/WhatsApp Image 2025-03-03 at 10.36.58 AM.png"
+            alt="Ali Raza"
+          />
         </div>
-        <form action="/userMessage" method="post">
-          <div class="row1">
-            <div class="col1">
-              <label for="name">Name *</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Enter your name"
-                required
-              />
-            </div>
-            <div class="col2">
-              <label for="email">Email *</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
+
+        <div class="aboutDesc">
+          <p>
+            By 2023, I began turning my curiosity for the web into something
+            real. What started as a personal blog—just me, Ali Raza, sharing
+            thoughts on tech, code, and creativity—slowly began reaching others
+            who shared the same passion. I poured hours into learning,
+            designing, and building everything from scratch. Over time, the blog
+            gained traction, and in a defining moment, I landed my first
+            collaboration with a regional tech brand. That was the push I
+            needed. As a solo developer and founder, I continued refining the
+            platform—writing, coding, and managing every piece myself.
+            Eventually, I hosted a small community event to share my journey and
+            help others starting out. That moment reminded me why I started:
+            with consistency, curiosity, and a keyboard—anything is possible.
+          </p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <i class="fas fa-rocket fa-xl" style="color: orangered"></i>
+            <h1>Empowering Innovation</h1>
+            <p>
+              I consistently push the boundaries of technology, leading to
+              unique and effective solutions.
+            </p>
           </div>
-          <div class="row2">
-            <label for="message">Message *</label>
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Leave your message"
-              required
-            ></textarea>
+          <div class="card">
+            <i class="fas fa-bolt fa-xl" style="color: blue"></i>
+            <h1>Community-Centric Approach</h1>
+            <p>
+              My commitment to giving back not only enhances their reputation
+              but also strengthens ties within the community..
+            </p>
           </div>
-          <button type="submit">Submit</button>
-        </form>
+          <div class="card">
+            <i class="fas fa-chart-line fa-xl" style="color: green"></i>
+            <h1>Flexibility & Adaptability</h1>
+            <p>
+              I'm agile work environment allows them to quickly adapt to
+              changing market needs.
+            </p>
+          </div>
+        </div>
       </div>
       <footer>
         <div class="footerTop">
@@ -112,8 +130,8 @@
           </div>
           <div class="linksSection">
             <a href="/">Home</a>
-            <a href="/About-us">About Us</a>
-            <a href="/Contact-us">Contact Us</a>
+            <a href="/About">About</a>
+            <a href="/Contact">Contact</a>
           </div>
           <div class="personalLinks">
             <a
@@ -141,23 +159,12 @@
         </div>
       </footer>
     </div>
+
     <!-- Scripts are included at the end of the body for better performance -->
+    <script src="../javascript/script.js"></script>
     <script
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="../javascript/script.js"></script>
-    <script>
-      function showToast(message, color = "#4fbe87") {
-        Toastify({
-          text: message,
-          duration: 3000,
-          gravity: "top",
-          position: "right",
-          backgroundColor: color,
-        }).showToast();
-      }
-    </script>
   </body>
 </html>

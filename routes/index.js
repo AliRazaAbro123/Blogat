@@ -19,9 +19,9 @@ const router = express.Router();
 
 router.get("/", indexPage);
 
-router.get("/About-us", aboutPage);
+router.get("/About", aboutPage);
 
-router.get("/Contact-us", contactPage);
+router.get("/Contact", contactPage);
 
 router.get("/privacy-policy", privacyPage);
 

@@ -20,11 +20,11 @@ const indexPage = async (req, res) => {
 };
 
 const aboutPage = (req, res) => {
-  res.render("aboutUs");
+  res.render("about");
 };
 
 const contactPage = (req, res) => {
-  res.render("contactUs");
+  res.render("contact");
 };
 
 const privacyPage = (req, res) => {
