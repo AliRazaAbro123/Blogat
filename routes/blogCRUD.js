@@ -1,5 +1,4 @@
 const express = require("express");
-const blogModel = require("../models/blog");
 const {
   blogCreation,
   blogDeletation,

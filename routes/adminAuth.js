@@ -18,6 +18,9 @@ router.post("/adminAuthentication", (req, res) => {
   if (!isValid) {
     return res.status(401).json({ error: "Invalid credentials." });
   }
+  // Set session
+  req.session.isAdmin = true;
+  
   return res.redirect("/admin/adminPanel");
 });
 

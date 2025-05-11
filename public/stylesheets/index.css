@@ -393,7 +393,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 3rem;
+  gap: 0.6rem;
   overflow: hidden;
 }
 
@@ -490,13 +490,15 @@ img {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  border-bottom: 2px solid grey;
+  padding: 2rem 0;
 }
 
 .blogsCards .blogs .blog .tags {
   width: 20%;
   position: absolute;
-  top: 0.8rem;
-  left: 1rem;
+  top: 3rem;
+  left: 1.2rem;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -820,7 +822,7 @@ footer .footerBottom .privicy a:hover {
 
   .blogsCards .blogs {
     width: 100%;
-    gap: 1rem;
+    gap: 2rem;
     margin-bottom: 1rem;
   }
 
@@ -895,6 +897,10 @@ footer .footerBottom .privicy a:hover {
   .blogsCards .blogs .blog .content .title{
     font-size: 1.3rem;
     line-height: 24px;
+  }
+  .blogsCards .blogs .blog .tags{
+    top: 1.7rem;
+    left: 1.4rem;
   }
   footer {
     padding: 1rem 0;

@@ -151,6 +151,11 @@ const nodemailerConfig = async (req, res) => {
   }
 };
 
+const logoutConfig = (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
+}
+
 module.exports = {
   indexPage,
   aboutPage,
@@ -164,4 +169,5 @@ module.exports = {
   categoryPage,
   editPage,
   nodemailerConfig,
+  logoutConfig
 };
