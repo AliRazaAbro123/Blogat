@@ -1,15 +1,26 @@
 {
-  "name": "server",
+  "name": "blogat",
   "version": "1.0.0",
-  "description": "",
+ "description": "Blogat is a full-stack blog platform featuring a dynamic frontend, robust backend, and MongoDB database, built with Node.js, Express, and EJS.",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "blog",
+    "nodejs",
+    "express",
+    "ejs",
+    "mongodb",
+    "mongoose",
+    "backend",
+    "blog-platform",
+    "seo-friendly",
+    "blogat"
+  ],
+  "author": "Ali Raza",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "cookie-parser": "^1.4.7",
