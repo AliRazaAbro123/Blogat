@@ -333,7 +333,7 @@ img {
 
 .homeTop .top p {
   font-size: 1rem;
-  color: #c0baba;
+  color: #505050;
 }
 
 .homeTop .bottom {
@@ -432,6 +432,9 @@ img {
 .blogsCards .cards .about h3 {
   font-size: 1.1rem;
   font-weight: 500;
+}
+.blogsCards .cards .about #location{
+  font-size: 0.9rem;
 }
 
 .blogsCards .cards .about .dpinfo {
@@ -828,6 +831,7 @@ footer .footerBottom .privicy a:hover {
 
   .blogsCards .blogs {
     width: 100%;
+    padding: 0 0.4rem;
   }
 
   .blogsCards .cards .about .dpinfo {

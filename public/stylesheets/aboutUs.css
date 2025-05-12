@@ -304,6 +304,7 @@ img {
 
 .content h1 {
   font-size: 2.8rem;
+  text-align: center;
 }
 
 .content h1 span {
@@ -388,8 +389,6 @@ img {
   font-size: 1rem;
   font-weight: 400;
 }
-
-
 
 footer {
   width: 100%;
@@ -488,7 +487,7 @@ footer .footerTop .personalLinks h1 {
 }
 
 footer {
-  padding: 1rem 0;
+  padding: 1rem 2rem;
 }
 
 footer .footerTop {
@@ -546,7 +545,7 @@ footer .footerBottom .privicy a:hover {
 
 @media only screen and (max-width:678px) {
   .content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .content .images {
@@ -562,7 +561,12 @@ footer .footerBottom .privicy a:hover {
 
   .content .aboutDesc {
     width: 100%;
-    padding: 1rem 5px;
+    padding: 0rem 5px;
+  }
+
+  .content .aboutDesc p {
+    font-size: 1rem;
+    font-weight: 400;
   }
 
   .content .cards {
@@ -600,5 +604,23 @@ footer .footerBottom .privicy a:hover {
   footer .footerTop .personalLinks {
     align-items: center;
     flex-direction: row;
+  }
+
+  footer .footerBottom {
+    width: 100%;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  footer .footerBottom .privicy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
   }
 }

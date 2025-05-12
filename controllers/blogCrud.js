@@ -43,12 +43,12 @@ const blogDeletation = async (req, res) => {
 
 const blogEditation = async (req, res) => {
   const blogId = req.params.id;
-  const { title, description, category, tags } = req.body;
+  const { title, imageUri, description, category, tags } = req.body;
 
   try {
     await blogModel.updateOne(
       { _id: blogId },
-      { title, description, category, tags }
+      { title, description, category, tags, imageUri }
     );
     res.redirect("/admin/adminPanel");
   } catch (error) {

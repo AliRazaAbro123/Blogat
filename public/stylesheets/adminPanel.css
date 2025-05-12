@@ -418,6 +418,10 @@ img {
   font-weight: 500;
 }
 
+.blogsCards .cards .about #location {
+  font-size: 0.9rem;
+}
+
 .blogsCards .cards .about .dpinfo {
   width: 90%;
   height: 4rem;
@@ -841,6 +845,7 @@ footer .footerBottom .privicy a:hover {
 
   .blogsCards .blogs {
     width: 100%;
+    padding: 0 0.4rem;
   }
 
   .blogsCards .cards .about .dpinfo {
@@ -853,9 +858,11 @@ footer .footerBottom .privicy a:hover {
     align-items: center;
     justify-content: center;
   }
-  .blogsCards .blogs .blog .tagsCrud{
+
+  .blogsCards .blogs .blog .tagsCrud {
     width: 95%;
   }
+
   .blogsCards .blogs .blog {
     flex-direction: column;
     align-items: center;
@@ -867,13 +874,23 @@ footer .footerBottom .privicy a:hover {
     align-items: start;
     justify-content: center;
     width: 100%;
-    padding: 0rem;
+    height: auto;
+    padding: 0.5rem 0;
     gap: 1rem;
+  }
+
+  .blogsCards .blogs .blog .content h3 {
+    margin-top: 5px;
   }
 
   .blogsCards .blogs .blog .Image {
     width: 100%;
-    min-height: 12rem;
+    min-height: 10rem;
+  }
+
+  .blogsCards .blogs .blog .Image img {
+    width: 100%;
+    min-height: 10rem;
   }
 
   .blogsCards .cards {

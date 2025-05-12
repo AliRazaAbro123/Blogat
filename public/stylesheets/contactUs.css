@@ -317,7 +317,7 @@ img {
 }
 
 .content .top h3 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -500,7 +500,7 @@ footer .footerTop .personalLinks h1 {
 }
 
 footer {
-  padding: 1rem 0;
+  padding: 1rem 2rem;
 }
 
 footer .footerTop {
@@ -607,5 +607,23 @@ footer .footerBottom .privicy a:hover {
   footer .footerTop .personalLinks {
     align-items: center;
     flex-direction: row;
+  }
+
+  footer .footerBottom {
+    width: 100%;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  footer .footerBottom .privicy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
   }
 }

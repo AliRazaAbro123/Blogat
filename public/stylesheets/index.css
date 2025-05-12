@@ -424,6 +424,10 @@ img {
   font-weight: 500;
 }
 
+.blogsCards .cards .about #location {
+  font-size: 0.9rem;
+}
+
 .blogsCards .cards .about .dpinfo {
   width: 90%;
   height: 4rem;
@@ -712,7 +716,7 @@ footer .footerTop .personalLinks h1 {
 }
 
 footer {
-  padding: 1rem 2rem;
+  padding: 1rem 0;
 }
 
 footer .footerTop {
@@ -768,6 +772,7 @@ footer .footerBottom .privicy a:hover {
   text-decoration: underline;
 }
 
+
 @media only screen and (max-width:678px) {
   .homeTop .top {
     width: 100%;
@@ -777,7 +782,7 @@ footer .footerBottom .privicy a:hover {
   }
 
   .homeTop .top h1 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .homeTop .top p {
@@ -824,6 +829,7 @@ footer .footerBottom .privicy a:hover {
     width: 100%;
     gap: 2rem;
     margin-bottom: 1rem;
+    padding: 0 0.1rem;
   }
 
   .blogsCards .cards .about .dpinfo {
@@ -849,19 +855,25 @@ footer .footerBottom .privicy a:hover {
     align-items: start;
     justify-content: center;
     width: 100%;
+    height: auto;
     padding: 0rem;
     gap: 1rem;
   }
 
   .blogsCards .blogs .blog .content h3 {
-    font-size: 1.2rem;
-    margin-top: 10px;
+    font-size: 1.1rem;
+    margin-top: 6px;
     font-weight: 600;
   }
 
   .blogsCards .blogs .blog .Image {
     width: 100%;
-    min-height: 12rem;
+    min-height: 10rem;
+  }
+
+  .blogsCards .blogs .blog .Image img {
+    width: 100%;
+    min-height: 10rem;
   }
 
   .blogsCards .cards {
@@ -897,8 +909,12 @@ footer .footerBottom .privicy a:hover {
   }
 
   .blogsCards .blogs .blog .content .title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 24px;
+  }
+
+  .blogsCards .blogs .blog .content .description {
+    font-size: 0.9rem;
   }
 
   .blogsCards .blogs .blog .tags {
@@ -929,23 +945,5 @@ footer .footerBottom .privicy a:hover {
   footer .footerTop .personalLinks {
     align-items: center;
     flex-direction: row;
-  }
-
-  footer .footerBottom {
-    width: 100%;
-    font-size: 0.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  footer .footerBottom .privicy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 1rem;
   }
 }

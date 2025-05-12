@@ -74,7 +74,7 @@ img {
   max-width: 94rem;
   height: auto;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 0.40rem;
   overflow: hidden;
 }
 
@@ -276,6 +276,7 @@ img {
   border-radius: 0.25rem;
   color: #000000;
   background-color: #ffffff;
+  box-shadow: var(--shadow-medium);
 }
 
 .search-input::-webkit-search-decoration,
@@ -335,19 +336,25 @@ form {
   height: 30rem;
   padding: 0.8rem;
   border-radius: 20px;
-  background-color: #7c7c7c;
-  color: #ffffff;
+  background-color: #c9c9c9;
+  color: #000000;
   border: none;
   outline: none;
+  resize: none;
 }
-
+.row3 textarea::placeholder{
+  color: #2e2e2e;
+}
+form input::placeholder{
+  color: #2e2e2e;
+}
 form input {
   width: 40%;
   font-size: 1rem;
   padding: 1rem;
   border-radius: 20px;
-  background-color: #7c7c7c;
-  color: #ffffff;
+  background-color: #c9c9c9;
+  color: #000000;
   border: none;
   outline: none;
 }
@@ -468,6 +475,26 @@ footer .footerBottom h1 {
 
 
 @media only screen and (max-width:678px) {
+  form input{
+    width: 100%;
+    border-radius: 10px;
+  }
+  .row1,
+  .row2,
+  .row4 {
+    flex-direction: column;
+  }
+  .row3 input{
+    width: 100%;
+  }
+  .row3 textarea{
+    width: 100%;
+    border-radius: 10px;
+  }
+  form button{
+    width: 100%;
+    border-radius: 10px;
+  }
   footer {
     padding: 1rem 0;
   }
