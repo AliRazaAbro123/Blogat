@@ -36,7 +36,6 @@ body {
   line-height: 1.5;
   color: #29294b;
   background-color: #fdfdff;
-
 }
 
 main {
@@ -287,7 +286,7 @@ img {
 
 /* Navbar css code up */
 
-.header nav #createBlog{
+.header nav #createBlog {
   color: blue;
 }
 
@@ -302,7 +301,10 @@ form {
   gap: 1rem;
   padding: 4rem 0;
 }
-.row1, .row2, .row4{
+
+.row1,
+.row2,
+.row4 {
   width: 100%;
   height: auto;
   display: flex;
@@ -311,7 +313,8 @@ form {
   flex-direction: row;
   gap: 1rem;
 }
-.row3{
+
+.row3 {
   width: 100%;
   height: auto;
   display: flex;
@@ -320,11 +323,13 @@ form {
   flex-direction: column;
   gap: 1rem;
 }
-.row3 input{
+
+.row3 input {
   width: 81%;
   font-size: 1rem;
 }
-.row3 textarea{
+
+.row3 textarea {
   font-size: 1rem;
   width: 81%;
   height: 30rem;
@@ -335,7 +340,8 @@ form {
   border: none;
   outline: none;
 }
-form input{
+
+form input {
   width: 40%;
   font-size: 1rem;
   padding: 1rem;
@@ -345,7 +351,8 @@ form input{
   border: none;
   outline: none;
 }
-form button{
+
+form button {
   width: 40%;
   padding: 1rem;
   font-size: 1rem;

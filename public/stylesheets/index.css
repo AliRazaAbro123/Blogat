@@ -36,7 +36,6 @@ body {
   line-height: 1.5;
   color: #29294b;
   background-color: #fdfdff;
-
 }
 
 main {
@@ -492,6 +491,7 @@ img {
   flex-direction: row;
   border-bottom: 2px solid grey;
   padding: 2rem 0;
+  position: relative;
 }
 
 .blogsCards .blogs .blog .tags {
@@ -888,20 +888,24 @@ footer .footerBottom .privicy a:hover {
     align-items: start;
     justify-content: center;
   }
-  .blogsCards .blogs .blog .content{
+
+  .blogsCards .blogs .blog .content {
     height: auto;
     padding: 0;
     justify-content: center;
     align-items: start;
   }
-  .blogsCards .blogs .blog .content .title{
+
+  .blogsCards .blogs .blog .content .title {
     font-size: 1.3rem;
     line-height: 24px;
   }
-  .blogsCards .blogs .blog .tags{
+
+  .blogsCards .blogs .blog .tags {
     top: 1.7rem;
     left: 1.4rem;
   }
+
   footer {
     padding: 1rem 0;
   }

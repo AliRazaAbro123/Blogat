@@ -36,7 +36,6 @@ body {
   line-height: 1.5;
   color: #29294b;
   background-color: #fdfdff;
-
 }
 
 main {
@@ -885,10 +884,12 @@ footer .footerBottom .privicy a:hover {
     align-items: start;
     justify-content: center;
   }
-  .blogsCards .blogs .blog .tags{
+
+  .blogsCards .blogs .blog .tags {
     top: 1.7rem;
     left: 1.4rem;
   }
+
   footer {
     padding: 1rem 0;
   }

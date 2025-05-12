@@ -4,16 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Creation</title>
-    <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg" type="image/x-icon">
     <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
+      rel="shortcut icon"
+      href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg"
+      type="image/x-icon"
     />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -40,9 +35,7 @@
                 <a class="menu-link" id="aboutUs" href="/About">About</a>
               </li>
               <li class="menu-item">
-                <a class="menu-link" id="contactUs" href="/Contact"
-                  >Contact</a
-                >
+                <a class="menu-link" id="contactUs" href="/Contact">Contact</a>
               </li>
               <li class="menu-item">
                 <a class="menu-link" id="createBlog" href="/blogCreation"
@@ -78,7 +71,13 @@
           <datalist id="author">
             <option value="Ali Raza"></option>
           </datalist>
-          <input type="text" name="title" placeholder="title" value="<%= blog.title %>" required />
+          <input
+            type="text"
+            name="title"
+            placeholder="title"
+            value="<%= blog.title %>"
+            required
+          />
         </div>
         <div class="row2">
           <input
@@ -109,7 +108,13 @@
           />
         </div>
         <div class="row3">
-          <input type="text" name="imageUri" placeholder="Image url" value="<%= blog.imageUri %>" required />
+          <input
+            type="text"
+            name="imageUri"
+            placeholder="Image url"
+            value="<%= blog.imageUri %>"
+            required
+          />
           <datalist id="category-list">
             <option value="Technology"></option>
             <option value="Travel"></option>
@@ -124,14 +129,15 @@
           <textarea
             name="description"
             id="description"
-            placeholder="Content"
-            value="<%= blog.description %>"
+            placeholder="Description"
             required
-          ></textarea>
+          >
+<%= blog.description %></textarea
+          >
         </div>
         <div class="row4">
           <button type="reset">Reset</button>
-          <button type="submit">Submit</button>
+          <button type="submit">Update</button>
         </div>
       </form>
     </div>
