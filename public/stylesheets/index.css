@@ -299,7 +299,6 @@ img {
   width: 100%;
   height: auto;
 }
-
 .homeTop .top {
   width: 65%;
   height: 20rem;
@@ -567,6 +566,7 @@ img {
 
 .blogsCards .blogs .blog .description {
   font-size: 1rem;
+  font-weight: 400;
   line-height: 1.3rem;
 }
 
@@ -918,8 +918,8 @@ footer .footerBottom .privicy a:hover {
   }
 
   .blogsCards .blogs .blog .tags {
-    top: 1.7rem;
-    left: 1.4rem;
+    top: 1.2rem;
+    left: 0.6rem;
   }
 
   footer {

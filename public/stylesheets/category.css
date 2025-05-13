@@ -300,6 +300,28 @@ img {
   height: auto;
 }
 
+.homebtn {
+  padding: 1.4rem 3rem;
+}
+
+.homebtn a {
+  text-decoration: none;
+  color: #3f3f3f;
+  font-size: 1rem;
+  transition: all 1s ease-in-out;
+  font-weight: 500;
+}
+
+.homebtn span {
+  font-size: 1rem;
+  color: #535353;
+  font-weight: 400;
+}
+
+.homebtn a:hover {
+  border-bottom: 2px solid #29294b;
+}
+
 .homeTop .top {
   width: 65%;
   height: 20rem;
@@ -433,7 +455,8 @@ img {
   font-size: 1.1rem;
   font-weight: 500;
 }
-.blogsCards .cards .about #location{
+
+.blogsCards .cards .about #location {
   font-size: 0.9rem;
 }
 
@@ -571,7 +594,7 @@ img {
 
 .blogsCards .blogs .blog .description {
   font-size: 1rem;
-  letter-spacing: 1px;
+  font-weight: 400;
   line-height: 1.3rem;
 }
 
@@ -781,8 +804,20 @@ footer .footerBottom .privicy a:hover {
   .homeTop .top {
     width: 100%;
     height: auto;
-    padding: 3rem 0;
+    padding: 1.5rem 0;
     gap: 1rem;
+  }
+
+  .homebtn {
+    padding: 1rem;
+  }
+
+  .homebtn a {
+    font-size: 0.9rem;
+  }
+
+  .homebtn span {
+    font-size: 0.9rem;
   }
 
   .homeTop .top h1 {
@@ -850,6 +885,7 @@ footer .footerBottom .privicy a:hover {
     align-items: center;
     justify-content: center;
     height: auto;
+    padding: 1rem 0;
   }
 
   .blogsCards .blogs .blog .content {
@@ -862,7 +898,11 @@ footer .footerBottom .privicy a:hover {
 
   .blogsCards .blogs .blog .Image {
     width: 100%;
-    min-height: 12rem;
+    min-height: 10rem;
+  }
+  .blogsCards .blogs .blog .Image img{
+    width: 100%;
+    min-height: 10rem;
   }
 
   .blogsCards .cards {
@@ -890,8 +930,8 @@ footer .footerBottom .privicy a:hover {
   }
 
   .blogsCards .blogs .blog .tags {
-    top: 1.7rem;
-    left: 1.4rem;
+    top: 1.6rem;
+    left: 0.8rem;
   }
 
   footer {
