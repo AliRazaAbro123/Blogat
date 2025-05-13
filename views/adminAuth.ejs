@@ -4,20 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BLOGAT | Admin Authentication</title>
-    <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg"
+      type="image/x-icon"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MZ6F6Z0F88"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-MZ6F6Z0F88");
+    </script>
+
     <link rel="stylesheet" href="../stylesheets/adminAuth.css" />
   </head>
   <body>
     <div class="container">
       <h1>Login or Signup</h1>
-    <form action="/admin/adminAuthentication" method="post">
-        <input type="text" placeholder="Enter Your Name" name="adminName" autocomplete="off" required />
-        <input type="email" placeholder="Enter Your Email" name="adminEmail" autocomplete="off" required />
-        <input type="password" placeholder="Enter Your Password" name="adminPassword" autocomplete="off" required />
+      <form action="/admin/adminAuthentication" method="post">
+        <input
+          type="text"
+          placeholder="Enter Your Name"
+          name="adminName"
+          autocomplete="off"
+          required
+        />
+        <input
+          type="email"
+          placeholder="Enter Your Email"
+          name="adminEmail"
+          autocomplete="off"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Enter Your Password"
+          name="adminPassword"
+          autocomplete="off"
+          required
+        />
         <input id="btn" type="reset" value="Reset" />
         <input id="submit" type="submit" value="Login" />
       </form>
