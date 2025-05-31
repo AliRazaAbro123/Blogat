@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const blogCreation = async (req, res) => {
   try {
-    const { title, description, imageUri, author, tags, category } = req.body;
+    const { title, description, imageUri, author, tag, category } = req.body;
 
     if (!title || !description) {
       return res.status(400).json({ error: "All fields are required" });
@@ -12,12 +12,11 @@ const blogCreation = async (req, res) => {
       author,
       imageUri,
       title,
-      tags,
+      tag,
       description,
       category,
     });
 
-    const savedBlog = await blog.save();
     res.status(201).redirect("/admin/adminPanel");
   } catch (error) {
     console.error(error);
@@ -43,12 +42,12 @@ const blogDeletation = async (req, res) => {
 
 const blogEditation = async (req, res) => {
   const blogId = req.params.id;
-  const { title, imageUri, description, category, tags } = req.body;
+  const { title, imageUri, description, category, tag } = req.body;
 
   try {
     await blogModel.updateOne(
       { _id: blogId },
-      { title, description, category, tags, imageUri }
+      { title, description, category, tag, imageUri }
     );
     res.redirect("/admin/adminPanel");
   } catch (error) {
