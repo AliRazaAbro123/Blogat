@@ -3,20 +3,25 @@ const blogModel = require("../models/blog");
 const nodemailer = require("nodemailer");
 
 const indexPage = async (req, res) => {
-  const blogs = await blogModel.find();
-  // moment js code fro date formating
-  const createdAt = moment(blogs.createdAt);
+  try {
+    const blogs = await blogModel.find();
+    // moment js code fro date formating
+    const createdAt = moment(blogs.createdAt);
 
-  let displayDate;
-  if (createdAt.isSame(moment(), "day")) {
-    displayDate = "Today";
-  } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
-    displayDate = "Yesterday";
-  } else {
-    displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
+    let displayDate;
+    if (createdAt.isSame(moment(), "day")) {
+      displayDate = "Today";
+    } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
+      displayDate = "Yesterday";
+    } else {
+      displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
+    }
+    // moment js code fro date formating
+    res.render("index", { blogs, displayDate });
+  } catch (error) {
+    console.log("Error fetching blogs", error);
+    res.status(500).send("Internal Server Error");
   }
-  // moment js code fro date formating
-  res.render("index", { blogs, displayDate });
 };
 
 const aboutPage = (req, res) => {
@@ -40,22 +45,27 @@ const adminAuthPage = (req, res) => {
 };
 
 const adminPanelPage = async (req, res) => {
-  const blogs = await blogModel.find();
+  try {
+    const blogs = await blogModel.find();
 
-  // moment js code fro date formating
-  const createdAt = moment(blogs.createdAt);
+    // moment js code fro date formating
+    const createdAt = moment(blogs.createdAt);
 
-  let displayDate;
-  if (createdAt.isSame(moment(), "day")) {
-    displayDate = "Today";
-  } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
-    displayDate = "Yesterday";
-  } else {
-    displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
+    let displayDate;
+    if (createdAt.isSame(moment(), "day")) {
+      displayDate = "Today";
+    } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
+      displayDate = "Yesterday";
+    } else {
+      displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
+    }
+    // moment js code fro date formating
+
+    res.render("adminPanel", { blogs, displayDate });
+  } catch (error) {
+    console.log("Error fetching blogs", error);
+    res.status(500).send("Internal Server Error");
   }
-  // moment js code fro date formating
-
-  res.render("adminPanel", { blogs, displayDate });
 };
 
 const blogCreationPage = (req, res) => {
@@ -63,24 +73,29 @@ const blogCreationPage = (req, res) => {
 };
 
 const blogPage = async (req, res) => {
-  const blogId = req.params.id;
-  const blog = await blogModel.findOne({ _id: blogId });
-  if (!blog) {
-    return res.status(404).send("Blog not found");
-  }
-  // moment js code fro date formating
-  const createdAt = moment(blog.createdAt);
+  try {
+    const blogId = req.params.id;
+    const blog = await blogModel.findOne({ _id: blogId });
+    if (!blog) {
+      return res.status(404).send("Blog not found");
+    }
+    // moment js code fro date formating
+    const createdAt = moment(blog.createdAt);
 
-  let displayDate;
-  if (createdAt.isSame(moment(), "day")) {
-    displayDate = "Today";
-  } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
-    displayDate = "Yesterday";
-  } else {
-    displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
+    let displayDate;
+    if (createdAt.isSame(moment(), "day")) {
+      displayDate = "Today";
+    } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
+      displayDate = "Yesterday";
+    } else {
+      displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
+    }
+    // moment js code fro date formating
+    res.render("blog", { blog, displayDate });
+  } catch (error) {
+    console.log("Error fetching blog", error);
+    res.status(500).send("Internal Server Error");
   }
-  // moment js code fro date formating
-  res.render("blog", { blog, displayDate });
 };
 
 const categoryPage = async (req, res) => {
@@ -92,7 +107,7 @@ const categoryPage = async (req, res) => {
     });
 
     // Format dates for each blog using Moment.js
-    const blogsWithDisplayDate = categorizedBlogs.map(blog => {
+    const blogsWithDisplayDate = categorizedBlogs.map((blog) => {
       const createdAt = moment(blog.createdAt);
       let displayDate;
 
@@ -117,14 +132,18 @@ const categoryPage = async (req, res) => {
   }
 };
 
-
 const editPage = async (req, res) => {
-  const blogId = req.params.id;
-  const blog = await blogModel.findOne({ _id: blogId });
-  if (!blog) {
-    return res.status(404).send("Blog not found");
+  try {
+    const blogId = req.params.id;
+    const blog = await blogModel.findOne({ _id: blogId });
+    if (!blog) {
+      return res.status(404).send("Blog not found");
+    }
+    res.render("updation", { blog });
+  } catch (error) {
+    console.log("Error fetching blog for editing", error);
+    res.status(500).send("Internal Server Error");
   }
-  res.render("updation", { blog });
 };
 
 // nodemailer config
