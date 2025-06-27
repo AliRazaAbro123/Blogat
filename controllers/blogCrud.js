@@ -2,25 +2,72 @@ const blogModel = require("../models/blog");
 const mongoose = require("mongoose");
 
 const blogCreation = async (req, res) => {
+  
   try {
-    const { title, description, imageUri, author, tag, category } = req.body;
+    const requiredFields = [
+      "title",
+      "description",
+      "imageUri",
+      "author",
+      "tag",
+      "category",
+      "secondTitle",
+      "secondDescription",
+      "thirdTitle",
+      "forthTitle",
+      "fifthTitle",
+      "thirdDescription",
+      "forthDescription",
+      "fifthDescription",
+    ];
 
-    if (!title || !description) {
-      return res.status(400).json({ error: "All fields are required" });
+    const missingFields = requiredFields.filter((field) => !req.body[field]);
+
+    if (missingFields.length > 0) {
+      return res.status(400).json({
+        error: `Missing required field(s): ${missingFields.join(", ")}`,
+      });
     }
-    const blog = await blogModel.create({
-      author,
-      imageUri,
+
+    const {
       title,
-      tag,
       description,
+      imageUri,
+      author,
+      tag,
       category,
+      secondTitle,
+      secondDescription,
+      thirdTitle,
+      forthTitle,
+      fifthTitle,
+      thirdDescription,
+      forthDescription,
+      fifthDescription,
+    } = req.body;
+
+
+    const blog = await blogModel.create({
+      title,
+      description,
+      imageUri,
+      author,
+      tag,
+      category,
+      secondTitle,
+      secondDescription,
+      thirdDescription,
+      forthDescription,
+      fifthDescription,
+      thirdTitle,
+      forthTitle,
+      fifthTitle,
     });
 
     res.status(201).redirect("/admin/adminPanel");
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Server error" });
+    console.error("Blog creation error:", error);
+    res.status(500).json({ error: "Server error. Please try again later." });
   }
 };
 

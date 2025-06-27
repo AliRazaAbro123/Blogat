@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog Creation</title>
+    <title>Blog Updation</title>
     <link
       rel="shortcut icon"
       href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg"
       type="image/x-icon"
     />
-
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -24,7 +23,20 @@
 
       gtag("config", "G-MZ6F6Z0F88");
     </script>
-    <meta name="google-adsense-account" content="ca-pub-6153573963834456">
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -54,8 +66,13 @@
                 <a class="menu-link" id="contactUs" href="/Contact">Contact</a>
               </li>
               <li class="menu-item">
+                <a class="menu-link" id="adminPanel" href="/admin/adminPanel"
+                  >Admin Panel</a
+                >
+              </li>
+              <li class="menu-item">
                 <a class="menu-link" id="createBlog" href="/blogCreation"
-                  >Update Blog</a
+                  >Create Blog</a
                 >
               </li>
             </ul>
@@ -74,33 +91,21 @@
           </div>
         </nav>
       </header>
-      <form action="/blog/edit/<%= blog._id %>" method="post">
+      <form action="/blog/blogCreation" method="post">
         <div class="row1">
           <input
             type="text"
             name="author"
-            placeholder="Author"
+            placeholder="Author Name"
             list="author"
-            value="<%= blog.author %>"
+            value="Ali Raza"
             required
           />
-          <datalist id="author">
-            <option value="Ali Raza"></option>
-          </datalist>
-          <input
-            type="text"
-            name="title"
-            placeholder="title"
-            value="<%= blog.title %>"
-            required
-          />
-        </div>
-        <div class="row2">
           <input
             type="text"
             list="category-list"
             name="category"
-            placeholder="category"
+            placeholder="Category Name"
             value="<%= blog.category %>"
             required
           />
@@ -117,20 +122,62 @@
           <input
             type="text"
             list="category-list"
-            name="tags"
-            value="<%= blog.tags %>"
-            placeholder="Tags"
+            name="tag"
+            placeholder="Tag Name"
+            value="<%= blog.tag %>"
             required
           />
+          <datalist id="author">
+            <option value="Ali Raza"></option>
+          </datalist>
+        </div>
+        <div class="row2">
+          <input type="text" name="title" placeholder="Main Title" required value="<%= blog.title %>"/>
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Main Description"
+            required
+          ><%= blog.description %></textarea>
         </div>
         <div class="row3">
-          <input
-            type="text"
-            name="imageUri"
-            placeholder="Image url"
-            value="<%= blog.imageUri %>"
+          <input type="text" name="secondTitle" placeholder="Second Title" value="<%= blog.secondTitle %>"/>
+          <textarea
+            name="secondDescription"
+            id="description"
+            placeholder="Second Description"
             required
-          />
+          ><%= blog.secondDescription %>"</textarea>
+        </div>
+        <div class="row4">
+          <input type="text" name="thirdTitle" placeholder="Third Title" value="<%= blog.thirdTitle%>" />
+          <textarea
+            name="thirdDescription"
+            id="description"
+            placeholder="Third Description"
+            required
+          ><%= blog.thirdDescription%>"</textarea>
+        </div>
+        <div class="row5">
+          <input type="text" name="forthTitle" placeholder="Fourth Title" value="<%= blog.forthTitle %>"/>
+          <textarea
+            name="forthDescription"
+            id="description"
+            placeholder="Fourth Description"
+            required
+          ><%= blog.forthDescription%>"</textarea>
+        </div>
+        <div class="row6">
+          <input type="text" name="fifthTitle" placeholder="Fifth Title" value="<%= blog.fifthTitle%>" />
+          <textarea
+            name="fifthDescription"
+            id="description"
+            placeholder="Fifth Description"
+            required
+          ><%= blog.fifthDescription %>"</textarea>
+        </div>
+        <div class="row7">
+          <input type="text" name="imageUri" placeholder="Image url" required value="<%= blog.imageUri %>"/>
           <datalist id="category-list">
             <option value="Technology"></option>
             <option value="Travel"></option>
@@ -141,26 +188,13 @@
             <option value="SEO"></option>
             <option value="Trends"></option>
           </datalist>
-
-          <textarea
-            name="description"
-            id="description"
-            placeholder="Description"
-            required
-          >
-<%= blog.description %></textarea
-          >
         </div>
-        <div class="row4">
-          <button type="reset">Reset</button>
-          <button type="submit">Update</button>
+        <div class="row8">
+          <button type="reset">REST</button>
+          <button type="submit">UPDATE</button>
         </div>
       </form>
     </div>
     <script src="../javascript/script.js"></script>
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

@@ -9,11 +9,6 @@
       href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg"
       type="image/x-icon"
     />
-    <link
-      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
-      rel="stylesheet"
-    />
-    <meta name="google-adsense-account" content="ca-pub-6153573963834456">
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -33,6 +28,10 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
@@ -97,22 +96,16 @@
           <input
             type="text"
             name="author"
-            placeholder="Author"
+            placeholder="Author Name"
             list="author"
             value="Ali Raza"
             required
           />
-          <datalist id="author">
-            <option value="Ali Raza"></option>
-          </datalist>
-          <input type="text" name="title" placeholder="title" required />
-        </div>
-        <div class="row2">
           <input
             type="text"
             list="category-list"
             name="category"
-            placeholder="Category"
+            placeholder="Category Name"
             required
           />
           <datalist id="category-list">
@@ -128,12 +121,60 @@
           <input
             type="text"
             list="category-list"
-            name="tags"
-            placeholder="Tag"
+            name="tag"
+            placeholder="Tag Name"
             required
           />
+          <datalist id="author">
+            <option value="Ali Raza"></option>
+          </datalist>
+        </div>
+        <div class="row2">
+          <input type="text" name="title" placeholder="Main Title" required />
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Main Description"
+            required
+          ></textarea>
         </div>
         <div class="row3">
+          <input type="text" name="secondTitle" placeholder="Second Title" />
+          <textarea
+            name="secondDescription"
+            id="description"
+            placeholder="Second Description"
+            required
+          ></textarea>
+        </div>
+        <div class="row4">
+          <input type="text" name="thirdTitle" placeholder="Third Title" />
+          <textarea
+            name="thirdDescription"
+            id="description"
+            placeholder="Third Description"
+            required
+          ></textarea>
+        </div>
+        <div class="row5">
+          <input type="text" name="forthTitle" placeholder="Fourth Title" />
+          <textarea
+            name="forthDescription"
+            id="description"
+            placeholder="Fourth Description"
+            required
+          ></textarea>
+        </div>
+        <div class="row6">
+          <input type="text" name="fifthTitle" placeholder="Fifth Title" />
+          <textarea
+            name="fifthDescription"
+            id="description"
+            placeholder="Fifth Description"
+            required
+          ></textarea>
+        </div>
+        <div class="row7">
           <input type="text" name="imageUri" placeholder="Image url" required />
           <datalist id="category-list">
             <option value="Technology"></option>
@@ -145,39 +186,13 @@
             <option value="SEO"></option>
             <option value="Trends"></option>
           </datalist>
-
-          <!-- Hidden input to store Quill's HTML content -->
-          <input type="hidden" name="description" id="description" />
-          <textarea
-            name="description"
-            id="description"
-            placeholder="Content"
-            required
-          ></textarea>
         </div>
-        <div class="row4">
-          <button type="reset">Reset</button>
-          <button type="submit">Submit</button>
+        <div class="row8">
+          <button type="reset">REST</button>
+          <button type="submit">SUBMIT</button>
         </div>
       </form>
     </div>
-    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
-    <script>
-      const quill = new Quill('#editor', {
-        theme: 'snow'
-      });
-    
-      // When submitting form, copy the Quill HTML into the hidden input
-      const form = document.querySelector('form');
-      form.onsubmit = function () {
-        const descriptionInput = document.querySelector('#description');
-        descriptionInput.value = quill.root.innerHTML;
-      };
-    </script>
     <script src="../javascript/script.js"></script>
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

@@ -8,21 +8,53 @@ const blogSchema = new mongoose.Schema({
     default: "Ali Raza",
   },
   imageUri: {
-    type: String, // Could also use Buffer for direct image storage
-  },
-  title: {
     type: String,
-    required: true,
-    trim: true,
   },
   tag: {
     type: String,
     required: true,
     trim: true,
   },
+  title: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  secondTitle: {
+    type: String,
+    trim: true,
+  },
+  thirdTitle: {
+    type: String,
+    trim: true,
+  },
+  forthTitle: {
+    type: String,
+    trim: true,
+  },
+  fifthTitle: {
+    type: String,
+    trim: true,
+  },
   description: {
     type: String,
     required: true,
+  },
+  secondDescription: {
+    type: String,
+    trim: true,
+  },
+  thirdDescription: {
+    type: String,
+    trim: true,
+  },
+  forthDescription: {
+    type: String,
+    trim: true,
+  },
+  fifthDescription: {
+    type: String,
+    trim: true,
   },
   category: {
     type: String,

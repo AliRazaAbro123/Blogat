@@ -13,7 +13,6 @@ const {
   categoryPage,
   editPage,
   nodemailerConfig,
-  logoutConfig,
 } = require("../controllers/pagesView");
 const router = express.Router();
 

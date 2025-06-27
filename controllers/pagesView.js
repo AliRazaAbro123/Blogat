@@ -90,24 +90,33 @@ const categoryPage = async (req, res) => {
     const categorizedBlogs = await blogModel.find({
       category: { $regex: new RegExp(`^${categoryName}$`, "i") },
     });
-    // moment js code fro date formating
-    const createdAt = moment(categorizedBlogs.createdAt);
 
-    let displayDate;
-    if (createdAt.isSame(moment(), "day")) {
-      displayDate = "Today";
-    } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
-      displayDate = "Yesterday";
-    } else {
-      displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
-    }
-    // moment js code fro date formating
-    res.render("category", { categorizedBlogs, displayDate, categoryName });
+    // Format dates for each blog using Moment.js
+    const blogsWithDisplayDate = categorizedBlogs.map(blog => {
+      const createdAt = moment(blog.createdAt);
+      let displayDate;
+
+      if (createdAt.isSame(moment(), "day")) {
+        displayDate = "Today";
+      } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
+        displayDate = "Yesterday";
+      } else {
+        displayDate = createdAt.format("D/M/YYYY");
+      }
+
+      return { ...blog._doc, displayDate }; // Spread original blog and add displayDate
+    });
+
+    res.render("category", {
+      categorizedBlogs: blogsWithDisplayDate,
+      categoryName,
+    });
   } catch (error) {
     console.error("Error fetching categorized blogs:", error);
     res.status(500).send("Server error");
   }
 };
+
 
 const editPage = async (req, res) => {
   const blogId = req.params.id;

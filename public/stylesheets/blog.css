@@ -300,6 +300,7 @@ img {
   flex-direction: column;
   gap: 1rem;
   text-align: center;
+  padding: 0 2rem;
 }
 
 .homebtn {
@@ -418,13 +419,24 @@ img {
   justify-content: start;
   align-items: start;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem 2rem;
+  gap: 3rem;
+  padding: 2rem 3rem;
 }
-
+.blogContentCards .content #mainTitle{
+  font-size: 1.7rem;
+}
+.blogContentCards .content .both h1{
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
 .blogContentCards .content p {
   font-size: 1rem;
   line-height: 1.7rem;
+  color: #000000;
+  letter-spacing: 0.6px;
+  font-weight: 500;
 }
 
 .blogContentCards .cards {
@@ -517,6 +529,13 @@ img {
   text-decoration: none;
   font-size: 1rem;
   transition: all 0.3s ease;
+}
+.blogContentCards .cards .about .links{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 footer {
@@ -673,6 +692,9 @@ footer .footerBottom .privicy a:hover {
 }
 
 @media only screen and (max-width:678px) {
+  .blogTop{
+    padding: 0 1rem;
+  }
   .blogTop .top {
     width: 100%;
     padding: 0.2rem 0.4rem;
@@ -715,12 +737,18 @@ footer .footerBottom .privicy a:hover {
 
   .blogContentCards .content {
     width: 100%;
-    padding: 0rem 0.4rem;
+    padding: 0rem 1rem;
   }
 
   .blogContentCards .content p {
     font-size: 0.9rem;
     font-weight: 400;
+  }
+  .blogContentCards .content .both h1{
+    font-size: 1.2rem;
+  }
+  .blogContentCards .content #mainTitle{
+    font-size: 1.4rem;
   }
 
   .blogContentCards .cards {

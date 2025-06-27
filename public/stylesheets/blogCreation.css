@@ -299,76 +299,120 @@ form {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
-  padding: 4rem 0;
+  gap: 2rem;
+  padding: 4rem 2rem;
 }
 
 .row1,
-.row2,
-.row4 {
+.row7 {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
 }
-
-.row3 {
+.row2,
+.row3,
+.row4,
+.row5,
+.row6{
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
-
+.row1 input{
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.26);
+  border: 1px solid black;
+  width: 25%;
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: #e2e2e2;
+  color: #000000;
+}
+.row2 input,
+.row3 input,
+.row4 input,
+.row5 input,
+.row6 input {
+  width: 81%;
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: #e2e2e2;
+  color: #000000;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.26);
+  border: 1px solid black;
+}
 .row3 input {
   width: 81%;
   font-size: 1rem;
 }
 
-.row3 textarea {
+.row2 textarea,
+.row3 textarea,
+.row4 textarea,
+.row5 textarea,
+.row6 textarea {
   font-size: 1rem;
   width: 81%;
-  height: 30rem;
-  padding: 0.8rem;
-  border-radius: 20px;
-  background-color: #c9c9c9;
+  height: 15rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #e2e2e2;
   color: #000000;
-  border: none;
-  outline: none;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.26);
+  border: 1px solid black;
   resize: none;
 }
-.row3 textarea::placeholder{
-  color: #2e2e2e;
-}
-form input::placeholder{
-  color: #2e2e2e;
-}
-form input {
-  width: 40%;
+.row7 input{
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.26);
+  border: 1px solid black;
+  width: 81%;
   font-size: 1rem;
   padding: 1rem;
-  border-radius: 20px;
-  background-color: #c9c9c9;
+  background-color: #e2e2e2;
   color: #000000;
-  border: none;
-  outline: none;
 }
-
-form button {
-  width: 40%;
-  padding: 1rem;
+.row2 textarea::placeholder,
+.row3 textarea::placeholder,
+.row4 textarea::placeholder,
+.row5 textarea::placeholder,
+.row6 textarea::placeholder{
+  color: #2e2e2e;
+}
+.row1 input::placeholder,
+.row2 input::placeholder,
+.row3 input::placeholder,
+.row4 input::placeholder,
+.row5 input::placeholder,
+.row6 input::placeholder{
+  color: #2e2e2e;
+}
+.row8{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+.row8 button{
+  padding: 0.8rem 3rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: bold;
   background-color: #29294b;
-  border-radius: 20px;
+  border-radius: 5px;
   color: #ffffff;
-  border: none;
-  outline: none;
+  letter-spacing: 1px;
 }
 
 /* cutom css */

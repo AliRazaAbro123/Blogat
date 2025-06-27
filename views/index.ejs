@@ -33,7 +33,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-
+    <script
+    src="https://kit.fontawesome.com/a076d05399.js"
+    crossorigin="anonymous"
+  ></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -179,7 +182,7 @@
             </a>
             <div class="content">
               <div class="tags">
-                <h1><%= blog.tags %></h1>
+                <h1><%= blog.tag %></h1>
               </div>
               <h3 class="creator">
                 <%= blog.author %>
@@ -283,9 +286,5 @@
     </div>
     <!-- Scripts are included at the end of the body for better performance -->
     <script src="../javascript/script.js"></script>
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

@@ -24,12 +24,15 @@
 
       gtag("config", "G-MZ6F6Z0F88");
     </script>
-    <meta name="google-adsense-account" content="ca-pub-6153573963834456">
     <link rel="stylesheet" href="../stylesheets/blog.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
@@ -84,21 +87,39 @@
       <div class="blogTop">
         <div class="top">
           <h3><%= blog.author %> <span><%= displayDate %></span></h3>
-          <h1><%= blog.title %></h1>
           <p>
             "Blogat: Your go-to destination for bold ideas and global stories.
             Dive into handpicked content designed to inform, inspire, and spark
             curiosity."
           </p>
-          <button><%= blog.tags %></button>
+          <button><%= blog.tag %></button>
         </div>
         <div class="image">
-          <img src="<%= blog.imageUri %>" alt="<%= blog.imageUri %>" />
+          <img src="<%= blog.imageUri %>" alt="<%= blog.title %>" />
         </div>
       </div>
       <div class="blogContentCards">
         <div class="content">
-          <p> <%- blog.description %></p>
+          <div class="both">
+            <h1 id="mainTitle">● <%= blog.title %></h1>
+            <p><%- blog.description %></p>
+          </div>
+          <div class="both">
+            <h1>● <%= blog.secondTitle %></h1>
+            <p><%- blog.secondDescription %></p>
+          </div>
+          <div class="both">
+            <h1>● <%= blog.thirdTitle %></h1>
+            <p><%- blog.thirdDescription %></p>
+          </div>
+          <div class="both">
+            <h1>● <%= blog.forthTitle %></h1>
+            <p><%- blog.forthDescription %></p>
+          </div>
+          <div class="both">
+            <h1>● <%= blog.fifthTitle %></h1>
+            <p><%- blog.fifthDescription %></p>
+          </div>
         </div>
         <div class="cards">
           <div class="about">
@@ -184,9 +205,5 @@
     </div>
     <!-- Scripts are included at the end of the body for better performance -->
     <script src="../javascript/script.js"></script>
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
