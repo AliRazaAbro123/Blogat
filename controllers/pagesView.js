@@ -33,11 +33,11 @@ const contactPage = (req, res) => {
 };
 
 const privacyPage = (req, res) => {
-  res.render("privacyPolicy");
+  res.render("Privacy-policy");
 };
 
 const termsPage = (req, res) => {
-  res.render("termsConditions");
+  res.render("Privacy-policy");
 };
 
 const adminAuthPage = (req, res) => {

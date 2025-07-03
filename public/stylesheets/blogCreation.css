@@ -313,11 +313,12 @@ form {
   flex-direction: row;
   gap: 2rem;
 }
+
 .row2,
 .row3,
 .row4,
 .row5,
-.row6{
+.row6 {
   width: 100%;
   height: auto;
   display: flex;
@@ -326,7 +327,8 @@ form {
   flex-direction: column;
   gap: 2rem;
 }
-.row1 input{
+
+.row1 input {
   border-radius: 5px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.26);
   border: 1px solid black;
@@ -336,6 +338,7 @@ form {
   background-color: #e2e2e2;
   color: #000000;
 }
+
 .row2 input,
 .row3 input,
 .row4 input,
@@ -350,6 +353,7 @@ form {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.26);
   border: 1px solid black;
 }
+
 .row3 input {
   width: 81%;
   font-size: 1rem;
@@ -371,7 +375,8 @@ form {
   border: 1px solid black;
   resize: none;
 }
-.row7 input{
+
+.row7 input {
   border-radius: 5px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.26);
   border: 1px solid black;
@@ -381,22 +386,25 @@ form {
   background-color: #e2e2e2;
   color: #000000;
 }
+
 .row2 textarea::placeholder,
 .row3 textarea::placeholder,
 .row4 textarea::placeholder,
 .row5 textarea::placeholder,
-.row6 textarea::placeholder{
+.row6 textarea::placeholder {
   color: #2e2e2e;
 }
+
 .row1 input::placeholder,
 .row2 input::placeholder,
 .row3 input::placeholder,
 .row4 input::placeholder,
 .row5 input::placeholder,
-.row6 input::placeholder{
+.row6 input::placeholder {
   color: #2e2e2e;
 }
-.row8{
+
+.row8 {
   width: 100%;
   height: auto;
   display: flex;
@@ -405,7 +413,8 @@ form {
   flex-direction: row;
   gap: 2rem;
 }
-.row8 button{
+
+.row8 button {
   padding: 0.8rem 3rem;
   font-size: 1rem;
   font-weight: bold;
@@ -472,6 +481,12 @@ footer .footerTop .linksSection {
   padding: 1rem 0;
 }
 
+footer .footerTop .linksSection h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
 footer .footerTop .linksSection a {
   text-decoration: none;
   font-size: 1rem;
@@ -511,6 +526,32 @@ footer .footerTop .personalLinks h1 {
   color: #444141;
 }
 
+/* Footer section personal links icons ------ */
+#facebook {
+  color: rgb(32, 32, 214);
+  font-size: 2rem;
+  margin-right: 3rem;
+}
+
+#linkedin {
+  color: #0077b5;
+  font-size: 2rem;
+  margin-left: 3rem;
+}
+
+#instagram {
+
+  color: #e1306c;
+  font-size: 2rem;
+  margin-right: 3rem;
+}
+
+#github {
+  color: #444141;
+  font-size: 2rem;
+  margin-left: 3rem;
+}
+
 footer .footerBottom h1 {
   font-size: 1rem;
   font-weight: 500;
@@ -519,26 +560,31 @@ footer .footerBottom h1 {
 
 
 @media only screen and (max-width:678px) {
-  form input{
+  form input {
     width: 100%;
     border-radius: 10px;
   }
+
   .row1,
   .row2,
   .row4 {
     flex-direction: column;
   }
-  .row3 input{
+
+  .row3 input {
     width: 100%;
   }
-  .row3 textarea{
-    width: 100%;
-    border-radius: 10px;
-  }
-  form button{
+
+  .row3 textarea {
     width: 100%;
     border-radius: 10px;
   }
+
+  form button {
+    width: 100%;
+    border-radius: 10px;
+  }
+
   footer {
     padding: 1rem 0;
   }

@@ -422,15 +422,18 @@ img {
   gap: 3rem;
   padding: 2rem 3rem;
 }
-.blogContentCards .content #mainTitle{
+
+.blogContentCards .content #mainTitle {
   font-size: 1.7rem;
 }
-.blogContentCards .content .both h1{
+
+.blogContentCards .content .both h1 {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
+
 .blogContentCards .content p {
   font-size: 1rem;
   line-height: 1.7rem;
@@ -530,7 +533,8 @@ img {
   font-size: 1rem;
   transition: all 0.3s ease;
 }
-.blogContentCards .cards .about .links{
+
+.blogContentCards .cards .about .links {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -591,6 +595,12 @@ footer .footerTop .linksSection {
   padding: 1rem 0;
 }
 
+footer .footerTop .linksSection h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
 footer .footerTop .linksSection a {
   text-decoration: none;
   font-size: 1rem;
@@ -632,6 +642,32 @@ footer .footerTop .personalLinks h1 {
 
 .fa-github {
   color: #444141;
+}
+
+/* Footer section personal links icons ------ */
+#facebook {
+  color: rgb(32, 32, 214);
+  font-size: 2rem;
+  margin-right: 3rem;
+}
+
+#linkedin {
+  color: #0077b5;
+  font-size: 2rem;
+  margin-left: 3rem;
+}
+
+#instagram {
+
+  color: #e1306c;
+  font-size: 2rem;
+  margin-right: 3rem;
+}
+
+#github {
+  color: #444141;
+  font-size: 2rem;
+  margin-left: 3rem;
 }
 
 footer {
@@ -692,9 +728,10 @@ footer .footerBottom .privicy a:hover {
 }
 
 @media only screen and (max-width:678px) {
-  .blogTop{
+  .blogTop {
     padding: 0 1rem;
   }
+
   .blogTop .top {
     width: 100%;
     padding: 0.2rem 0.4rem;
@@ -744,10 +781,12 @@ footer .footerBottom .privicy a:hover {
     font-size: 0.9rem;
     font-weight: 400;
   }
-  .blogContentCards .content .both h1{
+
+  .blogContentCards .content .both h1 {
     font-size: 1.2rem;
   }
-  .blogContentCards .content #mainTitle{
+
+  .blogContentCards .content #mainTitle {
     font-size: 1.4rem;
   }
 

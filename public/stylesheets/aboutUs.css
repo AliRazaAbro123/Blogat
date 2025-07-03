@@ -303,7 +303,7 @@ img {
 }
 
 .content h1 {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   text-align: center;
 }
 
@@ -350,6 +350,7 @@ img {
 .content .aboutDesc p {
   text-align: center;
   font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .content .cards {
@@ -443,6 +444,12 @@ footer .footerTop .linksSection {
   padding: 1rem 0;
 }
 
+footer .footerTop .linksSection h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
 footer .footerTop .linksSection a {
   text-decoration: none;
   font-size: 1rem;
@@ -484,6 +491,32 @@ footer .footerTop .personalLinks h1 {
 
 .fa-github {
   color: #444141;
+}
+
+/* Footer section personal links icons ------ */
+#facebook {
+  color: rgb(32, 32, 214);
+  font-size: 2rem;
+  margin-right: 3rem;
+}
+
+#linkedin {
+  color: #0077b5;
+  font-size: 2rem;
+  margin-left: 3rem;
+}
+
+#instagram {
+
+  color: #e1306c;
+  font-size: 2rem;
+  margin-right: 3rem;
+}
+
+#github {
+  color: #444141;
+  font-size: 2rem;
+  margin-left: 3rem;
 }
 
 footer {

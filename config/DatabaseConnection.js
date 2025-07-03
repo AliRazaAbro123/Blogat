@@ -15,7 +15,9 @@ const connectWithRetry = async (retries = 5, delay = 3000) => {
       process.exit(1);
     }
 
-    console.log(`🔁 Retrying to connect in ${delay / 1000}s... (${retries} retries left)`);
+    console.log(
+      `🔁 Retrying to connect in ${delay / 1000}s... (${retries} retries left)`
+    );
     setTimeout(() => connectWithRetry(retries - 1, delay), delay);
   }
 };

@@ -14,6 +14,7 @@ const {
   editPage,
   nodemailerConfig,
 } = require("../controllers/pagesView");
+const subscribeSchema = require("../models/subscribe");
 const router = express.Router();
 
 router.get("/", indexPage);
@@ -38,7 +39,22 @@ router.get("/category/:name", categoryPage);
 
 router.get("/edit/:id", editPage);
 
-router.post("/userMessage", nodemailerConfig)
+router.post("/userMessage", nodemailerConfig);
+
+router.post("/subscribe", (req, res) => {
+  const subscribe = new subscribeSchema({
+    email: req.body.email,
+  });
+
+  subscribe
+    .save()
+    .then(() => {
+      res.status(200).json({ message: "Subscription successful!" });
+    })
+    .catch((err) => {
+      res.status(500).json({ message: "Subscription failed!", error: err });
+    });
+});
 
 
 module.exports = router;
