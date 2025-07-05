@@ -692,6 +692,7 @@ footer {
   align-items: center;
   flex-direction: column;
   gap: 1rem;
+  padding: 1rem 0;
 }
 
 footer .footerTop {
@@ -772,7 +773,7 @@ footer .footerTop .personalLinks {
 
 footer .footerTop .personalLinks h1 {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 7  00;
 }
 
 .fa-facebook {
@@ -816,38 +817,6 @@ footer .footerTop .personalLinks h1 {
   color: #444141;
   font-size: 2rem;
   margin-left: 3rem;
-}
-
-footer {
-  padding: 1rem 0;
-}
-
-footer .footerTop {
-  width: 100%;
-  justify-content: space-between;
-  align-items: start;
-  flex-direction: row;
-  padding: 2rem 1rem;
-  margin-top: 2rem;
-}
-
-footer .footerTop .titleSection {
-  width: 24%;
-}
-
-footer .footerTop .titleSection h1 {
-  font-size: 1.2rem;
-}
-
-footer .footerTop .personalLinks {
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-footer .footerTop .personalLinks h1 {
-  font-size: 1.2rem;
-  font-weight: 700;
 }
 
 footer .footerBottom {
@@ -1077,7 +1046,14 @@ footer .footerBottom .privicy a:hover {
   }
 
   footer .footerTop .personalLinks {
-    align-items: center;
-    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #facebook, #linkedin, #instagram, #github {
+    font-size: 1.8rem;
+  }
+  #facebook{
+    margin-top: 1rem;
   }
 }

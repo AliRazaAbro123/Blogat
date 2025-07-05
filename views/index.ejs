@@ -9,6 +9,13 @@
       href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg"
       type="image/x-icon"
     />
+    <!-- Google Adsense meta script to connect -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6153573963834456"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google Adsense meta script to connect -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-MZ6F6Z0F88"
@@ -163,7 +170,7 @@
                 >
               </button>
               <button>
-                <a href="/category/Seo"
+                <a href="/category/Trends"
                   ><i
                     class="fa-solid fa-person-praying"
                     style="color: blueviolet; margin-right: 5px"
@@ -318,34 +325,37 @@
     <!-- Scripts are included at the end of the body for better performance -->
     <script src="../javascript/script.js"></script>
     <script>
-      document.getElementById("subscribeForm").addEventListener("submit", async function (e) {
-        e.preventDefault();
-    
-        const email = document.getElementById("emailInput").value;
-    
-        try {
-          const response = await fetch("/subscribe", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email }),
-          });
-    
-          const result = await response.json();
-    
-          if (response.ok) {
-            document.getElementById("message").textContent = result.message;
-            document.getElementById("message").style.color = "green";
-          } else {
-            document.getElementById("message").textContent = result.message;
+      document
+        .getElementById("subscribeForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const email = document.getElementById("emailInput").value;
+
+          try {
+            const response = await fetch("/subscribe", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email }),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              document.getElementById("message").textContent = result.message;
+              document.getElementById("message").style.color = "green";
+            } else {
+              document.getElementById("message").textContent = result.message;
+              document.getElementById("message").style.color = "red";
+            }
+          } catch (error) {
+            document.getElementById("message").textContent =
+              "Something went wrong.";
             document.getElementById("message").style.color = "red";
           }
-        } catch (error) {
-          document.getElementById("message").textContent = "Something went wrong.";
-          document.getElementById("message").style.color = "red";
-        }
-      });
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
