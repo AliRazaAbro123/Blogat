@@ -1,275 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BLOGAT | <%= categoryName %></title>
-    <link
-      rel="shortcut icon"
-      href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg"
-      type="image/x-icon"
-    />
-    <!-- Google Adsense meta script to connect -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6153573963834456"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google Adsense meta script to connect -->
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MZ6F6Z0F88"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-MZ6F6Z0F88");
-    </script>
-
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../stylesheets/category.css" />
-  </head>
-  <body>
-    <div class="container">
-      <header class="header" id="header">
-        <nav class="navbar container">
-          <a href="/" class="brand">BLOGAT</a>
-          <div class="burger" id="burger">
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-          </div>
-          <span class="overlay"></span>
-          <div class="menu" id="menu">
-            <ul class="menu-inner">
-              <li class="menu-item">
-                <a class="menu-link" id="home" href="/">Home</a>
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" id="aboutUs" href="/About">About</a>
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" id="contactUs" href="/Contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <span><i class="bx bx-search search-toggle"></i></span>
-          <div class="search-block">
-            <form class="search-form">
-              <span><i class="bx bx-arrow-back search-cancel"></i></span>
-              <input
-                type="search"
-                name="search"
-                class="search-input"
-                placeholder="Search here..."
-              />
-            </form>
-          </div>
-        </nav>
-      </header>
-      <div class="homebtn">
-        <a href="/">Home</a>
-        <span> &lt; <%= categoryName %> </span>
+<%- include("partials/head") %>
+<main id="smooth-wrapper">
+  <div class="container">
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="/" class="brand">BLOGAT</a>
+        <div class="burger" id="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </div>
+        <span class="overlay"></span>
+        <div class="menu" id="menu">
+          <ul class="menu-inner">
+            <li class="menu-item">
+              <a class="menu-link" id="home" href="/">Home</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" id="aboutUs" href="/About">About</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" id="contactUs" href="/Contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <span><i class="bx bx-search search-toggle"></i></span>
+        <div class="search-block">
+          <form class="search-form">
+            <span><i class="bx bx-arrow-back search-cancel"></i></span>
+            <input
+              type="search"
+              name="search"
+              class="search-input"
+              placeholder="Search here..."
+            />
+          </form>
+        </div>
+      </nav>
+    </header>
+    <div class="homebtn">
+      <a href="/">Home</a>
+      <span> &lt; <%= categoryName %> </span>
+    </div>
+    <section class="homeTop">
+      <div class="top">
+        <h1>
+          Explore more content in the
+          <span><%= categoryName %></span> category
+        </h1>
+        <p>
+          Welcome to Blogat — your ultimate destination for fresh insights! Dive
+          into handpicked content designed to inspire, entertain, and connect
+          with readers around the world.
+        </p>
+        <h3></h3>
       </div>
-      <section class="homeTop">
-        <div class="top">
-          <h1>
-            Explore more content in the
-            <span><%= categoryName %></span> category
-          </h1>
-          <p>
-            Welcome to Blogat — your ultimate destination for fresh insights!
-            Dive into handpicked content designed to inspire, entertain, and
-            connect with readers around the world.
-          </p>
-          <h3></h3>
-        </div>
-        <div class="bottom">
-          <h1>Explore Trending Topics</h1>
-          <div class="buttons">
-            <button>
-              <a href="/category/Travel"
-                ><i
-                  class="fa-solid fa-plane"
-                  style="color: orangered; margin-right: 5px"
-                ></i>
-                Travel
-              </a>
-            </button>
-            <button>
-              <a href="/category/Technology"
-                ><i
-                  class="fa-solid fa-camera-retro"
-                  style="color: blue; margin-right: 5px"
-                ></i>
-                Technology</a
-              >
-            </button>
-            <button>
-              <a href="/category/Sports"
-                ><i
-                  class="fa-solid fa-basketball"
-                  style="color: rebeccapurple; margin-right: 5px"
-                ></i>
-                Sports</a
-              >
-            </button>
-            <button>
-              <a href="/category/News"
-                ><i
-                  class="fa-solid fa-file"
-                  style="color: brown; margin-right: 5px"
-                ></i>
-                News</a
-              >
-            </button>
-          </div>
-          <div class="buttons">
-            <button>
-              <a href="/category/Weather"
-                ><i
-                  class="fa-solid fa-cloud-sun"
-                  style="color: green; margin-right: 5px"
-                ></i>
-                Weather</a
-              >
-            </button>
-            <button>
-              <a href="/category/Education"
-                ><i
-                  class="fa-solid fa-laptop"
-                  style="color: crimson; margin-right: 5px"
-                ></i>
-                Education</a
-              >
-            </button>
-            <button>
-              <a href="/category/Seo"
-                ><i
-                  class="fas fa-chart-bar"
-                  style="color: darkgoldenrod; margin-right: 5px"
-                ></i>
-                SEO</a
-              >
-            </button>
-            <button>
-              <a href="/category/Trends"
-                ><i
-                  class="fa-solid fa-person-praying"
-                  style="color: blueviolet; margin-right: 5px"
-                ></i
-                >Trends</a
-              >
-            </button>
-          </div>
-        </div>
-      </section>
-      <div class="blogsCards">
-        <section class="blogs">
-          <% categorizedBlogs.reverse().forEach(blog => { %>
-          <div class="blog">
-            <a href="/blog/<%= blog._id %>" class="Image">
-              <img src="<%= blog.imageUri %>" alt="<%= blog.imageUri %>" />
+      <div class="bottom">
+        <h1>Explore Trending Topics</h1>
+        <div class="buttons">
+          <button>
+            <a href="/category/Travel"
+              ><i
+                class="fa-solid fa-plane"
+                style="color: orangered; margin-right: 5px"
+              ></i>
+              Travel
             </a>
-            <div class="content">
-              <div class="tags">
-                <h1><%= blog.tag %></h1>
-              </div>
-              <h3 class="creator">
-                <%= blog.author %> <span><%= blog.date %></span>
-              </h3>
-              <a href="/blog/<%= blog._id %>" class="title">
-                <%= blog.title %>
-              </a>
-              <p class="description">
-                <%= blog.description.length > 120 ?
-                blog.description.substring(0, 120) + "...." : blog.description
-                %>
-              </p>
-              <button><a href="/blog/<%= blog._id %>">Discover More</a></button>
-            </div>
-          </div>
-          <% }); %>
-        </section>
-        <section class="cards">
-          <div class="about">
-            <h3>ABOUT</h3>
-            <div class="dpinfo">
-              <div class="Image">
-                <img src="../assets/1717442704967.jpg" alt="" />
-              </div>
-              <div class="aboutContent">
-                <h1>Ali Raza</h1>
-                <h3>Fullstack MERN Web Developer</h3>
-              </div>
-            </div>
-            <p>
-              Ali Raza shares thoughtful reflections on life, culture, and
-              personal growth. His work blends creativity with experience,
-              offering unique and meaningful perspectives.
-            </p>
-            <h3 id="location">
-              <i class="fas fa-map-marker-alt"></i> Sindh, Pakistan 🇵🇰
-            </h3>
-            <div class="links">
-              <a
-                href="https://www.facebook.com/profile.php?id=61552489011042"
-                target="_blank"
-                ><i class="fab fa-facebook fa-xl" title="Facebook"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/aliraza1121/ "
-                target="_blank"
-                ><i class="fab fa-linkedin fa-xl" title="Linkedin"></i
-              ></a>
-              <a href="https://www.instagram.com/ali.stacker/" target="_blank"
-                ><i class="fab fa-instagram fa-xl" title="Instagram"></i
-              ></a>
-              <a href="https://github.com/AliRazaAbro123" target="_blank"
-                ><i class="fab fa-github fa-xl" title="GitHub"></i
-              ></a>
-            </div>
-          </div>
-        </section>
+          </button>
+          <button>
+            <a href="/category/Technology"
+              ><i
+                class="fa-solid fa-camera-retro"
+                style="color: blue; margin-right: 5px"
+              ></i>
+              Technology</a
+            >
+          </button>
+          <button>
+            <a href="/category/Sports"
+              ><i
+                class="fa-solid fa-basketball"
+                style="color: rebeccapurple; margin-right: 5px"
+              ></i>
+              Sports</a
+            >
+          </button>
+          <button>
+            <a href="/category/News"
+              ><i
+                class="fa-solid fa-file"
+                style="color: brown; margin-right: 5px"
+              ></i>
+              News</a
+            >
+          </button>
+        </div>
+        <div class="buttons">
+          <button>
+            <a href="/category/Weather"
+              ><i
+                class="fa-solid fa-cloud-sun"
+                style="color: green; margin-right: 5px"
+              ></i>
+              Weather</a
+            >
+          </button>
+          <button>
+            <a href="/category/Education"
+              ><i
+                class="fa-solid fa-laptop"
+                style="color: crimson; margin-right: 5px"
+              ></i>
+              Education</a
+            >
+          </button>
+          <button>
+            <a href="/category/Seo"
+              ><i
+                class="fas fa-chart-bar"
+                style="color: darkgoldenrod; margin-right: 5px"
+              ></i>
+              SEO</a
+            >
+          </button>
+          <button>
+            <a href="/category/Trends"
+              ><i
+                class="fa-solid fa-person-praying"
+                style="color: blueviolet; margin-right: 5px"
+              ></i
+              >Trends</a
+            >
+          </button>
+        </div>
       </div>
-      <footer>
-        <div class="footerTop">
-          <div class="titleSection">
-            <h1>BLOGAT</h1>
-            <p>
-              BLOGAT is a blog that provides a platform for individuals to share
-              their stories, insights, and experiences. It aims to foster
-              connection and understanding through the power of storytelling.
+    </section>
+    <div class="blogsCards">
+      <section class="blogs">
+        <% categorizedBlogs.reverse().forEach(blog => { %>
+        <div class="blog">
+          <a href="/blog/<%= blog._id %>" class="Image">
+            <img src="<%= blog.imageUri %>" alt="<%= blog.imageUri %>" />
+          </a>
+          <div class="content">
+            <div class="tags">
+              <h1><%= blog.tag %></h1>
+            </div>
+            <h3 class="creator">
+              <%= blog.author %> <span><%= blog.date %></span>
+            </h3>
+            <a href="/blog/<%= blog._id %>" class="title">
+              <%= blog.title %>
+            </a>
+            <p class="description">
+              <%= blog.description.length > 120 ? blog.description.substring(0,
+              120) + "...." : blog.description %>
             </p>
+            <button>
+              <a href="/blog/<%= blog._id %>">Discover More</a>
+            </button>
           </div>
-          <div class="linksSection">
-            <h1>PAGES</h1>
-            <a href="/">Home</a>
-            <a href="/About">About</a>
-            <a href="/Contact">Contact</a>
+        </div>
+        <% }); %>
+      </section>
+      <section class="cards">
+        <div class="about">
+          <h3>ABOUT</h3>
+          <div class="dpinfo">
+            <div class="Image">
+              <img src="../assets/1717442704967.jpg" alt="" />
+            </div>
+            <div class="aboutContent">
+              <h1>Ali Raza</h1>
+              <h3>Fullstack MERN Web Developer</h3>
+            </div>
           </div>
-          <div class="personalLinks">
+          <p>
+            Ali Raza shares thoughtful reflections on life, culture, and
+            personal growth. His work blends creativity with experience,
+            offering unique and meaningful perspectives.
+          </p>
+          <h3 id="location">
+            <i class="fas fa-map-marker-alt"></i> Sindh, Pakistan 🇵🇰
+          </h3>
+          <div class="links">
             <a
               href="https://www.facebook.com/profile.php?id=61552489011042"
               target="_blank"
@@ -286,16 +199,148 @@
             ></a>
           </div>
         </div>
-        <div class="footerBottom">
-          <h1>Made with ❤️ by Ali Raza • © 2025</h1>
-          <div class="privicy">
-            <a href="/Privacy-policy">Policy</a>
-            <a href="/Terms-and-conditions">Terms</a>
-          </div>
-        </div>
-      </footer>
+      </section>
     </div>
-    <!-- Scripts are included at the end of the body for better performance -->
-    <script src="../javascript/script.js"></script>
-  </body>
-</html>
+    <div class="subscribe">
+      <h1>Subscribe to our Newsletter</h1>
+      <h3>
+        Stay updated with the latest blogs and news from BLOGAT. <br />
+        Enter your email to subscribe.
+      </h3>
+      <form id="subscribeForm">
+        <input
+          type="text"
+          name="subscribe"
+          id="emailInput"
+          placeholder="Enter Your Email"
+          required
+        />
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+      <p id="message"></p>
+    </div>
+    <footer>
+      <div class="footerTop">
+        <div class="titleSection">
+          <h1>BLOGAT</h1>
+          <p>
+            BLOGAT is a blog that provides a platform for individuals to share
+            their stories, insights, and experiences. It aims to foster
+            connection and understanding through the power of storytelling.
+          </p>
+        </div>
+        <div class="linksSection">
+          <h1>PAGES</h1>
+          <a href="/">Home</a>
+          <a href="/About">About</a>
+          <a href="/Contact">Contact</a>
+        </div>
+        <div class="personalLinks">
+          <a
+            href="https://www.facebook.com/profile.php?id=61552489011042"
+            target="_blank"
+            ><i class="fab fa-facebook fa-xl" title="Facebook"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/aliraza1121/ " target="_blank"
+            ><i class="fab fa-linkedin fa-xl" title="Linkedin"></i
+          ></a>
+          <a href="https://www.instagram.com/ali.stacker/" target="_blank"
+            ><i class="fab fa-instagram fa-xl" title="Instagram"></i
+          ></a>
+          <a href="https://github.com/AliRazaAbro123" target="_blank"
+            ><i class="fab fa-github fa-xl" title="GitHub"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <h1>Made with ❤️ by Ali Raza • © 2025</h1>
+        <div class="privicy">
+          <a href="/Privacy-policy">Policy</a>
+          <a href="/Terms-and-conditions">Terms</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <footer>
+    <div class="footerTop">
+      <div class="titleSection">
+        <h1>BLOGAT</h1>
+        <p>
+          BLOGAT is a blog that provides a platform for individuals to
+          share their stories, insights, and experiences. It aims to
+          foster connection and understanding through the power of
+          storytelling.
+        </p>
+      </div>
+      <div class="linksSection">
+        <h1>PAGES</h1>
+        <a href="/">Home</a>
+        <a href="/About">About</a>
+        <a href="/Contact">Contact</a>
+      </div>
+      <div class="personalLinks">
+        <h1>CONTACT ME AT:</h1>
+        <a
+          href="https://www.facebook.com/profile.php?id=61552489011042"
+          target="_blank"
+          ><i class="fab fa-facebook" id="facebook" title="Facebook"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/aliraza1121/ "
+          target="_blank"
+          ><i class="fab fa-linkedin" id="linkedin" title="Linkedin"></i
+        ></a>
+        <a href="https://www.instagram.com/ali.stacker/" target="_blank"
+          ><i
+            class="fab fa-instagram"
+            id="instagram"
+            title="Instagram"
+          ></i
+        ></a>
+        <a href="https://github.com/AliRazaAbro123" target="_blank"
+          ><i class="fab fa-github" id="github" title="GitHub"></i
+        ></a>
+      </div>
+    </div>
+    <div class="footerBottom">
+      <h1>Made with ❤️ by Ali Raza • © 2025</h1>
+      <div class="privicy">
+        <a href="/Privacy-policy">Policy</a>
+        <a href="/Terms-and-conditions">Terms</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</main>
+<script>
+  // GSAP Animations ---
+  document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: ".container",
+      smooth: 1, // Higher = smoother
+      effects: true, // Enable parallax effects if needed
+    });
+    const tl = gsap.timeline({
+      defaults: { duration: 0.5, ease: "power2.out" },
+    });
+    tl.from(".brand", { opacity: 0, y: -100, duration: 0.5 })
+      .from(".menu-item", {
+        opacity: 0,
+        y: -100,
+        duration: 0.4,
+        stagger: 0.3,
+        rotate: 360,
+      })
+      .from(".top", { y: -300, opacity: 0, duration: 0.4 })
+      .from(".bottom h1", { y: 300, opacity: 0, duration: 0.3 })
+      .from(".bottom .buttons button", {
+        y: 300,
+        opacity: 0,
+        duration: 0.4,
+        stagger: 0.2,
+      });
+  });
+</script>
+<%- include("partials/footer") %>

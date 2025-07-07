@@ -1,193 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BLOGAT | Contact</title>
-    <link
-      rel="shortcut icon"
-      href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg"
-      type="image/x-icon"
-    />
-    <!-- Google Adsense meta script to connect -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6153573963834456"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google Adsense meta script to connect -->
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MZ6F6Z0F88"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-MZ6F6Z0F88");
-    </script>
-
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../stylesheets/contactUs.css" />
-  </head>
-  <body>
-    <div class="container">
-      <header class="header" id="header">
-        <nav class="navbar container">
-          <a href="/" class="brand">BLOGAT</a>
-          <div class="burger" id="burger">
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-          </div>
-          <span class="overlay"></span>
-          <div class="menu" id="menu">
-            <ul class="menu-inner">
-              <li class="menu-item">
-                <a class="menu-link" id="home" href="/">Home</a>
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" id="aboutUs" href="/About">About</a>
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" id="contactUs" href="/Contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <span><i class="bx bx-search search-toggle"></i></span>
-          <div class="search-block">
-            <form class="search-form">
-              <span><i class="bx bx-arrow-back search-cancel"></i></span>
-              <input
-                type="search"
-                name="search"
-                class="search-input"
-                placeholder="Search here..."
-              />
-            </form>
-          </div>
-        </nav>
-      </header>
-      <div class="content">
-        <div class="top">
-          <h1>Have Questions or Feedback?</h1>
-          <h3>
-            I'd love to hear from you! Whether you have a suggestion,
-            collaboration idea, or just want to say hello—feel free to reach
-            out. Let's connect!
-          </h3>
+<%- include("partials/head") %>
+<main id="smooth-wrapper">
+  <div class="container">
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="/" class="brand">BLOGAT</a>
+        <div class="burger" id="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
         </div>
-        <form action="/userMessage" method="post">
-          <div class="row1">
-            <div class="col1">
-              <label for="name">Name *</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Enter your name"
-                required
-              />
-            </div>
-            <div class="col2">
-              <label for="email">Email *</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-          </div>
-          <div class="row2">
-            <label for="message">Message *</label>
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Leave your message"
-              required
-            ></textarea>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+        <span class="overlay"></span>
+        <div class="menu" id="menu">
+          <ul class="menu-inner">
+            <li class="menu-item">
+              <a class="menu-link" id="home" href="/">Home</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" id="aboutUs" href="/About">About</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" id="contactUs" href="/Contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <span><i class="bx bx-search search-toggle"></i></span>
+        <div class="search-block">
+          <form class="search-form">
+            <span><i class="bx bx-arrow-back search-cancel"></i></span>
+            <input
+              type="search"
+              name="search"
+              class="search-input"
+              placeholder="Search here..."
+            />
+          </form>
+        </div>
+      </nav>
+    </header>
+    <div class="content">
+      <div class="top">
+        <h1>Have Questions or Feedback?</h1>
+        <h3>
+          I'd love to hear from you! Whether you have a suggestion,
+          collaboration idea, or just want to say hello—feel free to reach out.
+          Let's connect!
+        </h3>
       </div>
-      <footer>
-        <div class="footerTop">
-          <div class="titleSection">
-            <h1>BLOGAT</h1>
-            <p>
-              BLOGAT is a blog that provides a platform for individuals to share
-              their stories, insights, and experiences. It aims to foster
-              connection and understanding through the power of storytelling.
-            </p>
+      <form action="/userMessage" method="post">
+        <div class="row1">
+          <div class="col1">
+            <label for="name">Name *</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+              required
+            />
           </div>
-          <div class="linksSection">
-            <h1>PAGES</h1>
-            <a href="/">Home</a>
-            <a href="/About">About</a>
-            <a href="/Contact">Contact</a>
-          </div>
-          <div class="personalLinks">
-            <h1>CONTACT ME AT:</h1>
-            <a
-              href="https://www.facebook.com/profile.php?id=61552489011042"
-              target="_blank"
-              ><i class="fab fa-facebook" id="facebook" title="Facebook"></i
-            ></a>
-            <a href="https://www.linkedin.com/in/aliraza1121/ " target="_blank"
-              ><i class="fab fa-linkedin" id="linkedin" title="Linkedin"></i
-            ></a>
-            <a href="https://www.instagram.com/ali.stacker/" target="_blank"
-              ><i class="fab fa-instagram" id="instagram" title="Instagram"></i
-            ></a>
-            <a href="https://github.com/AliRazaAbro123" target="_blank"
-              ><i class="fab fa-github" id="github" title="GitHub"></i
-            ></a>
+          <div class="col2">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
           </div>
         </div>
-        <div class="footerBottom">
-          <h1>Made with ❤️ by Ali Raza • © 2025</h1>
-          <div class="privicy">
-            <a href="/Privacy-policy">Policy</a>
-            <a href="/Terms-and-conditions">Terms</a>
-          </div>
+        <div class="row2">
+          <label for="message">Message *</label>
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Leave your message"
+            required
+          ></textarea>
         </div>
-      </footer>
+        <%- include("partials/footer") %>
+        <button type="submit">Submit</button>
+      </form>
+      <% if (query.msg === 'success') { %>
+      <script>
+        showToast("Your message has been sent!", "#4fbe87");
+      </script>
+      <% } else if (query.msg === 'error') { %>
+      <script>
+        showToast("Message failed to send. Try again.", "#ff5f5f");
+      </script>
+      <% } %>
     </div>
-    <!-- Scripts are included at the end of the body for better performance -->
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="../javascript/script.js"></script>
-    <script>
-      function showToast(message, color = "#4fbe87") {
-        Toastify({
-          text: message,
-          duration: 3000,
-          gravity: "top",
-          position: "right",
-          backgroundColor: color,
-        }).showToast();
-      }
-    </script>
-  </body>
-</html>
+    <div class="subscribe">
+      <h1>Subscribe to our Newsletter</h1>
+      <h3>
+        Stay updated with the latest blogs and news from BLOGAT. <br />
+        Enter your email to subscribe.
+      </h3>
+      <form id="subscribeForm">
+        <input
+          type="text"
+          name="subscribe"
+          id="emailInput"
+          placeholder="Enter Your Email"
+          required
+        />
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+      <p id="message"></p>
+    </div>
+    <footer>
+      <div class="footerTop">
+        <div class="titleSection">
+          <h1>BLOGAT</h1>
+          <p>
+            BLOGAT is a blog that provides a platform for individuals to share
+            their stories, insights, and experiences. It aims to foster
+            connection and understanding through the power of storytelling.
+          </p>
+        </div>
+        <div class="linksSection">
+          <h1>PAGES</h1>
+          <a href="/">Home</a>
+          <a href="/About">About</a>
+          <a href="/Contact">Contact</a>
+        </div>
+        <div class="personalLinks">
+          <h1>CONTACT ME AT:</h1>
+          <a
+            href="https://www.facebook.com/profile.php?id=61552489011042"
+            target="_blank"
+            ><i class="fab fa-facebook" id="facebook" title="Facebook"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/aliraza1121/ " target="_blank"
+            ><i class="fab fa-linkedin" id="linkedin" title="Linkedin"></i
+          ></a>
+          <a href="https://www.instagram.com/ali.stacker/" target="_blank"
+            ><i class="fab fa-instagram" id="instagram" title="Instagram"></i
+          ></a>
+          <a href="https://github.com/AliRazaAbro123" target="_blank"
+            ><i class="fab fa-github" id="github" title="GitHub"></i
+          ></a>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <h1>Made with ❤️ by Ali Raza • © 2025</h1>
+        <div class="privicy">
+          <a href="/Privacy-policy">Policy</a>
+          <a href="/Terms-and-conditions">Terms</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</main>
+<script>
+  function showToast(message, color = "#4fbe87") {
+    Toastify({
+      text: message,
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      backgroundColor: color,
+    }).showToast();
+  }
+</script>

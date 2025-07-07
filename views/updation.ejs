@@ -1,249 +1,197 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog Updation</title>
-    <link
-      rel="shortcut icon"
-      href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg"
-      type="image/x-icon"
-    />
-    <!-- Google Adsense meta script to connect -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6153573963834456"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google Adsense meta script to connect -->
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MZ6F6Z0F88"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-MZ6F6Z0F88");
-    </script>
-
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../stylesheets/blogCreation.css" />
-  </head>
-  <body>
-    <div class="container">
-      <header class="header" id="header">
-        <nav class="navbar container">
-          <a href="/" class="brand">BLOGAT</a>
-          <div class="burger" id="burger">
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-          </div>
-          <span class="overlay"></span>
-          <div class="menu" id="menu">
-            <ul class="menu-inner">
-              <li class="menu-item">
-                <a class="menu-link" id="home" href="/">Home</a>
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" id="aboutUs" href="/About">About</a>
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" id="contactUs" href="/Contact">Contact</a>
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" id="adminPanel" href="/admin/adminPanel"
-                  >Admin Panel</a
-                >
-              </li>
-              <li class="menu-item">
-                <a class="menu-link" id="createBlog" href="/blogCreation"
-                  >Create Blog</a
-                >
-              </li>
-            </ul>
-          </div>
-          <span><i class="bx bx-search search-toggle"></i></span>
-          <div class="search-block">
-            <form class="search-form">
-              <span><i class="bx bx-arrow-back search-cancel"></i></span>
-              <input
-                type="search"
-                name="search"
-                class="search-input"
-                placeholder="Search here..."
-              />
-            </form>
-          </div>
-        </nav>
-      </header>
-      <form action="/blog/blogCreation" method="post">
-        <div class="row1">
-          <input
-            type="text"
-            name="author"
-            placeholder="Author Name"
-            list="author"
-            value="Ali Raza"
-            required
-          />
-          <input
-            type="text"
-            list="category-list"
-            name="category"
-            placeholder="Category Name"
-            value="<%= blog.category %>"
-            required
-          />
-          <datalist id="category-list">
-            <option value="Technology"></option>
-            <option value="Travel"></option>
-            <option value="Sports"></option>
-            <option value="News"></option>
-            <option value="Education"></option>
-            <option value="Weather"></option>
-            <option value="SEO"></option>
-            <option value="Trends"></option>
-          </datalist>
-          <input
-            type="text"
-            list="category-list"
-            name="tag"
-            placeholder="Tag Name"
-            value="<%= blog.tag %>"
-            required
-          />
-          <datalist id="author">
-            <option value="Ali Raza"></option>
-          </datalist>
+<%- include("partials/head") %>
+<main id="smooth-wrapper">
+  <div class="container">
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="/" class="brand">BLOGAT</a>
+        <div class="burger" id="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
         </div>
-        <div class="row2">
-          <input
-            type="text"
-            name="title"
-            placeholder="Main Title"
-            required
-            value="<%= blog.title %>"
-          />
-          <textarea
-            name="description"
-            id="description"
-            placeholder="Main Description"
-            required
-          >
+        <span class="overlay"></span>
+        <div class="menu" id="menu">
+          <ul class="menu-inner">
+            <li class="menu-item">
+              <a class="menu-link" id="home" href="/">Home</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" id="aboutUs" href="/About">About</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" id="contactUs" href="/Contact">Contact</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" id="adminPanel" href="/admin/adminPanel"
+                >Admin Panel</a
+              >
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" id="createBlog" href="/blogCreation"
+                >Create Blog</a
+              >
+            </li>
+          </ul>
+        </div>
+        <span><i class="bx bx-search search-toggle"></i></span>
+        <div class="search-block">
+          <form class="search-form">
+            <span><i class="bx bx-arrow-back search-cancel"></i></span>
+            <input
+              type="search"
+              name="search"
+              class="search-input"
+              placeholder="Search here..."
+            />
+          </form>
+        </div>
+      </nav>
+    </header>
+    <form action="/blog/blogCreation" method="post">
+      <div class="row1">
+        <input
+          type="text"
+          name="author"
+          placeholder="Author Name"
+          list="author"
+          value="Ali Raza"
+          required
+        />
+        <input
+          type="text"
+          list="category-list"
+          name="category"
+          placeholder="Category Name"
+          value="<%= blog.category %>"
+          required
+        />
+        <datalist id="category-list">
+          <option value="Technology"></option>
+          <option value="Travel"></option>
+          <option value="Sports"></option>
+          <option value="News"></option>
+          <option value="Education"></option>
+          <option value="Weather"></option>
+          <option value="SEO"></option>
+          <option value="Trends"></option>
+        </datalist>
+        <input
+          type="text"
+          list="category-list"
+          name="tag"
+          placeholder="Tag Name"
+          value="<%= blog.tag %>"
+          required
+        />
+        <datalist id="author">
+          <option value="Ali Raza"></option>
+        </datalist>
+      </div>
+      <div class="row2">
+        <input
+          type="text"
+          name="title"
+          placeholder="Main Title"
+          required
+          value="<%= blog.title %>"
+        />
+        <textarea
+          name="description"
+          id="description"
+          placeholder="Main Description"
+          required
+        >
 <%= blog.description %></textarea
-          >
-        </div>
-        <div class="row3">
-          <input
-            type="text"
-            name="secondTitle"
-            placeholder="Second Title"
-            value="<%= blog.secondTitle %>"
-          />
-          <textarea
-            name="secondDescription"
-            id="description"
-            placeholder="Second Description"
-            required
-          >
+        >
+      </div>
+      <div class="row3">
+        <input
+          type="text"
+          name="secondTitle"
+          placeholder="Second Title"
+          value="<%= blog.secondTitle %>"
+        />
+        <textarea
+          name="secondDescription"
+          id="description"
+          placeholder="Second Description"
+          required
+        >
 <%= blog.secondDescription %>"</textarea
-          >
-        </div>
-        <div class="row4">
-          <input
-            type="text"
-            name="thirdTitle"
-            placeholder="Third Title"
-            value="<%= blog.thirdTitle%>"
-          />
-          <textarea
-            name="thirdDescription"
-            id="description"
-            placeholder="Third Description"
-            required
-          >
+        >
+      </div>
+      <div class="row4">
+        <input
+          type="text"
+          name="thirdTitle"
+          placeholder="Third Title"
+          value="<%= blog.thirdTitle%>"
+        />
+        <textarea
+          name="thirdDescription"
+          id="description"
+          placeholder="Third Description"
+          required
+        >
 <%= blog.thirdDescription%>"</textarea
-          >
-        </div>
-        <div class="row5">
-          <input
-            type="text"
-            name="forthTitle"
-            placeholder="Fourth Title"
-            value="<%= blog.forthTitle %>"
-          />
-          <textarea
-            name="forthDescription"
-            id="description"
-            placeholder="Fourth Description"
-            required
-          >
+        >
+      </div>
+      <div class="row5">
+        <input
+          type="text"
+          name="forthTitle"
+          placeholder="Fourth Title"
+          value="<%= blog.forthTitle %>"
+        />
+        <textarea
+          name="forthDescription"
+          id="description"
+          placeholder="Fourth Description"
+          required
+        >
 <%= blog.forthDescription%>"</textarea
-          >
-        </div>
-        <div class="row6">
-          <input
-            type="text"
-            name="fifthTitle"
-            placeholder="Fifth Title"
-            value="<%= blog.fifthTitle%>"
-          />
-          <textarea
-            name="fifthDescription"
-            id="description"
-            placeholder="Fifth Description"
-            required
-          >
+        >
+      </div>
+      <div class="row6">
+        <input
+          type="text"
+          name="fifthTitle"
+          placeholder="Fifth Title"
+          value="<%= blog.fifthTitle%>"
+        />
+        <textarea
+          name="fifthDescription"
+          id="description"
+          placeholder="Fifth Description"
+          required
+        >
 <%= blog.fifthDescription %>"</textarea
-          >
-        </div>
-        <div class="row7">
-          <input
-            type="text"
-            name="imageUri"
-            placeholder="Image url"
-            required
-            value="<%= blog.imageUri %>"
-          />
-          <datalist id="category-list">
-            <option value="Technology"></option>
-            <option value="Travel"></option>
-            <option value="Sports"></option>
-            <option value="News"></option>
-            <option value="Education"></option>
-            <option value="Weather"></option>
-            <option value="SEO"></option>
-            <option value="Trends"></option>
-          </datalist>
-        </div>
-        <div class="row8">
-          <button type="reset">REST</button>
-          <button type="submit">UPDATE</button>
-        </div>
-      </form>
-    </div>
-    <script src="../javascript/script.js"></script>
-  </body>
-</html>
+        >
+      </div>
+      <div class="row7">
+        <input
+          type="text"
+          name="imageUri"
+          placeholder="Image url"
+          required
+          value="<%= blog.imageUri %>"
+        />
+        <datalist id="category-list">
+          <option value="Technology"></option>
+          <option value="Travel"></option>
+          <option value="Sports"></option>
+          <option value="News"></option>
+          <option value="Education"></option>
+          <option value="Weather"></option>
+          <option value="SEO"></option>
+          <option value="Trends"></option>
+        </datalist>
+      </div>
+      <div class="row8">
+        <button type="reset">REST</button>
+        <button type="submit">UPDATE</button>
+      </div>
+    </form>
+  </div>
+</main>
+<%- include("partials/footer") %>

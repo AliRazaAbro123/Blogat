@@ -1,0 +1,129 @@
+<%- include("partials/head") %>
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h3>Admin Dashboard</h3>
+    </div>
+    <div class="sidebar-menu">
+      <div class="menu-item active"><i>📊</i> Dashboard</div>
+      <div class="menu-item"><i>👥</i> Users</div>
+      <div class="menu-item"><i>📝</i> Blogs</div>
+      <div class="menu-item"><i>⚙️</i> Settings</div>
+      <div class="menu-item"><i>🔒</i> Security</div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header">
+      <h1>Dashboard Overview</h1>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-container">
+      <div class="stat-card users">
+        <h3>Total Users</h3>
+        <div class="value"><%= subscribedUsers.length %></div>
+      </div>
+
+      <div class="stat-card blogs">
+        <h3>Total Blogs</h3>
+        <div class="value"><%= blogs.length %></div>
+      </div>
+
+      <div class="stat-card">
+        <h3>Travel Blogs</h3>
+        <div class="value"><%= blogCategories.Travel.length %></div>
+      </div>
+
+      <div class="stat-card">
+        <h3>Technology Blogs</h3>
+        <div class="value"><%= blogCategories.Technology.length %></div>
+      </div>
+      <div class="stat-card">
+        <h3>Sports Blogs</h3>
+        <div class="value"><%= blogCategories.Sports.length %></div>
+      </div>
+      <div class="stat-card">
+        <h3>News Blogs</h3>
+        <div class="value"><%= blogCategories.News.length %></div>
+      </div>
+      <div class="stat-card">
+        <h3>Weather Blogs</h3>
+        <div class="value"><%= blogCategories.Weather.length %></div>
+      </div>
+      <div class="stat-card">
+        <h3>Education Blogs</h3>
+        <div class="value"><%= blogCategories.Education.length %></div>
+      </div>
+      <div class="stat-card">
+        <h3>SEO Blogs</h3>
+        <div class="value"><%= blogCategories.SEO.length %></div>
+      </div>
+      <div class="stat-card">
+        <h3>Trends Blogs</h3>
+        <div class="value"><%= blogCategories.Trends.length %></div>
+      </div>
+    </div>
+
+    <!-- Users Table -->
+    <div class="data-table">
+      <div class="table-header">
+        <h3>User Emails</h3>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Registration Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% subscribedUsers.forEach((user, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= user.email %></td>
+            <td><%= user.createdAt.toISOString().split('T')[0] %></td>
+            <td><%= user.status || 'Active' %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Blogs Table -->
+    <div class="data-table">
+      <div class="table-header">
+        <h3>Recent Blogs</h3>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date</th>
+            <th>Views</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% blogs.forEach((blog, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= blog.title %></td>
+            <td><%= blog.author %></td>
+            <td><%= blog.createdAt.toISOString().split("T")[0] %></td>
+            <td><%= blog.views || 0 %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%- include("partials/footer") %>

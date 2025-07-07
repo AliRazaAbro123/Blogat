@@ -17,6 +17,11 @@ app.use(express.static(path.join(__dirname, "public")));
 
 DatabaseConnection();
 
+app.use((req, res, next) => {
+  res.locals.query = req.query; // this makes "query" available in all EJS files
+  next();
+});
+
 // Routes
 app.use("/", IndexRouter);
 app.use("/blog", blogRouter);

@@ -1,37 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy & Terms</title>
-    <link
-      rel="shortcut icon"
-      href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg"
-      type="image/x-icon"
-    />
-    <!-- Google Adsense meta script to connect -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6153573963834456"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google Adsense meta script to connect -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MZ6F6Z0F88"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-MZ6F6Z0F88");
-    </script>
-  </head>
-  <body>
-    <h1>Privacy Policy</h1>
+<%- include("partials/head") %>
+<main id="smooth-wrapper">
+  <div class="container">
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="/" class="brand">BLOGAT</a>
+        <div class="burger" id="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </div>
+        <span class="overlay"></span>
+        <div class="menu" id="menu">
+          <ul class="menu-inner">
+            <li class="menu-item">
+              <a class="menu-link" id="home" href="/">Home</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" id="aboutUs" href="/About">About</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" id="contactUs" href="/Contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <span
+          ><i class="bx bx-search search-toggle" title="Search Blogs"></i
+        ></span>
+        <div class="search-block">
+          <form class="search-form">
+            <span><i class="bx bx-arrow-back search-cancel"></i></span>
+            <input
+              type="search"
+              name="search"
+              class="search-input"
+              id="searchInput"
+              placeholder="Search here..."
+            />
+          </form>
+        </div>
+      </nav>
+    </header>
+    <div class="content">
+      <h1>Privacy Policy</h1>
     <p>Last updated: July 03, 2025</p>
     <p>
       This Privacy Policy describes Our policies and procedures on the
@@ -525,9 +535,7 @@
         <p>By phone number: +923068849254</p>
       </li>
     </ul>
-    <script
-      data-cfasync="false"
-      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-    ></script>
-  </body>
-</html>
+    </div>
+  </div>
+</main>
+<%- include("partials/footer") %>

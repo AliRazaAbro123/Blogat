@@ -620,7 +620,7 @@ img {
   color: #444141;
 }
 
-.subscribe{
+.subscribe {
   width: 100%;
   height: auto;
   display: flex;
@@ -630,17 +630,20 @@ img {
   gap: 0.5rem;
   padding: 5rem 0;
 }
-.subscribe h1{
+
+.subscribe h1 {
   font-size: 2rem;
   font-weight: 800;
 }
-.subscribe h3{
+
+.subscribe h3 {
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
   margin-bottom: 1rem;
 }
-.subscribe form{
+
+.subscribe form {
   width: 35%;
   height: auto;
   display: flex;
@@ -651,7 +654,8 @@ img {
   border: 2px solid #29294b;
   border-radius: 4px;
 }
-.subscribe form input{
+
+.subscribe form input {
   width: 100%;
   height: 3rem;
   padding: 0.5rem;
@@ -662,7 +666,8 @@ img {
   font-weight: 600;
   color: #29294b;
 }
-.subscribe form button{
+
+.subscribe form button {
   position: absolute;
   right: 2px;
   top: 4px;
@@ -677,10 +682,12 @@ img {
   font-weight: 600;
   cursor: pointer;
 }
-.subscribe p{
+
+.subscribe p {
   font-weight: bold;
 }
-.subscribe form button:hover{
+
+.subscribe form button:hover {
   background-color: #20203b;
 }
 
@@ -773,7 +780,7 @@ footer .footerTop .personalLinks {
 
 footer .footerTop .personalLinks h1 {
   font-size: 1.2rem;
-  font-weight: 7  00;
+  font-weight: 7 00;
 }
 
 .fa-facebook {
@@ -859,15 +866,18 @@ footer .footerBottom .privicy a:hover {
   }
 
   .homeTop .top h1 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+    line-height: 1.5rem;
   }
 
   .homeTop .top p {
     font-size: 0.9rem;
+    line-height: 1.2rem;
   }
 
   .homeTop .bottom h1 {
     font-size: 1rem;
+    font-weight: bold;
     text-align: center;
   }
 
@@ -878,23 +888,24 @@ footer .footerBottom .privicy a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 0.7rem;
     border-top: none;
+    margin-top: -1.8rem;
   }
 
   .homeTop .bottom .buttons {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    margin-bottom: 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two buttons per row */
+    gap: 2rem;
+    justify-items: center; /* Center buttons horizontally */
+    margin-top: 1rem;
   }
+  
 
   .homeTop .bottom .buttons button a {
-    padding: 1rem 3rem;
-    font-size: 1.2rem;
+    padding: 0.8rem;
+    font-size: 1rem;
   }
 
   .blogsCards {
@@ -998,6 +1009,7 @@ footer .footerBottom .privicy a:hover {
     top: 1.2rem;
     left: 0.6rem;
   }
+
   .subscribe {
     width: 100%;
     height: auto;
@@ -1009,19 +1021,24 @@ footer .footerBottom .privicy a:hover {
     padding: 3rem 0.4rem;
     text-align: center;
   }
-  .subscribe h1{
+
+  .subscribe h1 {
     line-height: 1.8rem;
   }
-  .subscribe h3{
+
+  .subscribe h3 {
     line-height: 1.3rem;
   }
-  .subscribe form{
+
+  .subscribe form {
     width: 100%;
   }
-  .subscribe form input{
+
+  .subscribe form input {
     padding: 0.3rem;
   }
-  .subscribe form button{
+
+  .subscribe form button {
     padding: 0 0.2rem;
   }
 
@@ -1050,10 +1067,15 @@ footer .footerBottom .privicy a:hover {
     justify-content: center;
     flex-direction: column;
   }
-  #facebook, #linkedin, #instagram, #github {
+
+  #facebook,
+  #linkedin,
+  #instagram,
+  #github {
     font-size: 1.8rem;
   }
-  #facebook{
+
+  #facebook {
     margin-top: 1rem;
   }
 }

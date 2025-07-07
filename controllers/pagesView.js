@@ -1,6 +1,7 @@
 const moment = require("moment");
 const blogModel = require("../models/blog");
 const nodemailer = require("nodemailer");
+const subscribedUsersModel = require("../models/subscribe");
 
 const indexPage = async (req, res) => {
   try {
@@ -17,7 +18,12 @@ const indexPage = async (req, res) => {
       displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
     }
     // moment js code fro date formating
-    res.render("index", { blogs, displayDate });
+    res.render("index", {
+      blogs,
+      displayDate,
+      pageTitle: "BLOGAT - Home",
+      cssPath: "../stylesheets/index.css",
+    });
   } catch (error) {
     console.log("Error fetching blogs", error);
     res.status(500).send("Internal Server Error");
@@ -25,23 +31,31 @@ const indexPage = async (req, res) => {
 };
 
 const aboutPage = (req, res) => {
-  res.render("about");
+  res.render("about", {
+    pageTitle: "BLOGAT - About Us",
+    cssPath: "../stylesheets/aboutUs.css",
+  });
 };
 
 const contactPage = (req, res) => {
-  res.render("contact");
+  res.render("contact", {
+    pageTitle: "BLOGAT - Contact",
+    cssPath: "../stylesheets/contactUs.css",
+  });
 };
 
 const privacyPage = (req, res) => {
-  res.render("Privacy-policy");
+  res.render("Privacy-policy", {
+    pageTitle: "BLOGAT - Privacy Policy",
+    cssPath: "../stylesheets/privacy.css",
+  });
 };
 
 const termsPage = (req, res) => {
-  res.render("Privacy-policy");
-};
-
-const adminAuthPage = (req, res) => {
-  res.render("adminAuth");
+  res.render("Privacy-policy", {
+    pageTitle: "BLOGAT - Terms of Service",
+    cssPath: "../stylesheets/privacy.css",
+  });
 };
 
 const adminPanelPage = async (req, res) => {
@@ -61,7 +75,12 @@ const adminPanelPage = async (req, res) => {
     }
     // moment js code fro date formating
 
-    res.render("adminPanel", { blogs, displayDate });
+    res.render("adminPanel", {
+      blogs,
+      displayDate,
+      pageTitle: "BLOGAT - Admin Panel",
+      cssPath: "../stylesheets/adminPanel.css",
+    });
   } catch (error) {
     console.log("Error fetching blogs", error);
     res.status(500).send("Internal Server Error");
@@ -69,7 +88,10 @@ const adminPanelPage = async (req, res) => {
 };
 
 const blogCreationPage = (req, res) => {
-  res.render("blogCreation");
+  res.render("blogCreation", {
+    pageTitle: "BLOGAT - Create Blog",
+    cssPath: "../stylesheets/blogCreation.css",
+  });
 };
 
 const blogPage = async (req, res) => {
@@ -91,7 +113,12 @@ const blogPage = async (req, res) => {
       displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
     }
     // moment js code fro date formating
-    res.render("blog", { blog, displayDate });
+    res.render("blog", {
+      blog,
+      displayDate,
+      pageTitle: `BLOGAT - ${blog.title}`,
+      cssPath: "../stylesheets/blog.css",
+    });
   } catch (error) {
     console.log("Error fetching blog", error);
     res.status(500).send("Internal Server Error");
@@ -125,6 +152,8 @@ const categoryPage = async (req, res) => {
     res.render("category", {
       categorizedBlogs: blogsWithDisplayDate,
       categoryName,
+      pageTitle: `BLOGAT - ${categoryName} Blogs`,
+      cssPath: "../stylesheets/category.css",
     });
   } catch (error) {
     console.error("Error fetching categorized blogs:", error);
@@ -139,7 +168,11 @@ const editPage = async (req, res) => {
     if (!blog) {
       return res.status(404).send("Blog not found");
     }
-    res.render("updation", { blog });
+    res.render("updation", {
+      blog,
+      pageTitle: `BLOGAT - Edit ${blog.title}`,
+      cssPath: "../stylesheets/blogCreation.css",
+    });
   } catch (error) {
     console.log("Error fetching blog for editing", error);
     res.status(500).send("Internal Server Error");
@@ -172,11 +205,36 @@ const nodemailerConfig = async (req, res) => {
   };
   try {
     await transporter.sendMail(mailOptions);
-    res.send("Message sent successfully!");
+    res.redirect("/contact?msg=success");
   } catch (error) {
+    res.redirect("/contact?msg=error");
     console.error(error);
     res.status(500).send("Something went wrong. Try again later.");
   }
+};
+
+const analyticsPage = async (req, res) => {
+  const subscribedUsers = await subscribedUsersModel
+    .find()
+    .sort({ createdAt: -1 });
+  const blogs = await blogModel.find().sort({ createdAt: -1 });
+  const blogCategories = {
+    Trends: blogs.filter((blog) => blog.category === "Trends"),
+    Technology: blogs.filter((blog) => blog.category === "Technology"),
+    Travel: blogs.filter((blog) => blog.category === "Travel"),
+    Education: blogs.filter((blog) => blog.category === "Education"),
+    News: blogs.filter((blog) => blog.category === "News"),
+    SEO: blogs.filter((blog) => blog.category === "SEO"),
+    Weather: blogs.filter((blog) => blog.category === "Weather"),
+    Sports: blogs.filter((blog) => blog.category === "Sports"),
+  };
+  res.render("adminAnalytics", {
+    subscribedUsers,
+    blogCategories,
+    blogs,
+    pageTitle: "BLOGAT - Analytics",
+    cssPath: "../stylesheets/analytics.css",
+  });
 };
 
 module.exports = {
@@ -185,11 +243,11 @@ module.exports = {
   contactPage,
   privacyPage,
   termsPage,
-  adminAuthPage,
   adminPanelPage,
   blogCreationPage,
   blogPage,
   categoryPage,
   editPage,
   nodemailerConfig,
+  analyticsPage,
 };

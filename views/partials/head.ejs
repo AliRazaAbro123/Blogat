@@ -3,15 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BLOGAT | Admin Authentication</title>
+    <title><%= pageTitle %></title>
     <link
       rel="shortcut icon"
       href="https://static.vecteezy.com/system/resources/previews/015/425/993/non_2x/unique-letter-or-word-tb-sans-serif-cut-and-merge-connect-font-on-top-down-image-graphic-icon-logo-design-abstract-concept-stock-can-be-used-as-symbol-related-to-initial-or-sport-tech-vector.jpg"
       type="image/x-icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
     />
     <!-- Google Adsense meta script to connect -->
     <script
@@ -20,8 +16,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- Google Adsense meta script to connect -->
-
-    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-MZ6F6Z0F88"
@@ -35,36 +29,32 @@
 
       gtag("config", "G-MZ6F6Z0F88");
     </script>
-    <link rel="stylesheet" href="../stylesheets/adminAuth.css" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+   <!-- Toastify CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<!-- Toastify JS -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <% if (cssPath) { %>
+    <link rel="stylesheet" href="<%= cssPath %>" />
+    <% } %>
   </head>
-  <body>
-    <div class="container">
-      <h1>Login or Signup</h1>
-      <form action="/admin/adminAuthentication" method="post">
-        <input
-          type="text"
-          placeholder="Enter Your Name"
-          name="adminName"
-          autocomplete="off"
-          required
-        />
-        <input
-          type="email"
-          placeholder="Enter Your Email"
-          name="adminEmail"
-          autocomplete="off"
-          required
-        />
-        <input
-          type="password"
-          placeholder="Enter Your Password"
-          name="adminPassword"
-          autocomplete="off"
-          required
-        />
-        <input id="btn" type="reset" value="Reset" />
-        <input id="submit" type="submit" value="Login" />
-      </form>
-    </div>
-  </body>
+  <body></body>
 </html>

@@ -6,15 +6,15 @@ const {
   contactPage,
   privacyPage,
   termsPage,
-  adminAuthPage,
   adminPanelPage,
   blogCreationPage,
   blogPage,
   categoryPage,
   editPage,
   nodemailerConfig,
+  analyticsPage,
 } = require("../controllers/pagesView");
-const subscribeSchema = require("../models/subscribe");
+const { subscribe } = require("../controllers/UserConfig");
 const router = express.Router();
 
 router.get("/", indexPage);
@@ -26,8 +26,6 @@ router.get("/Contact", contactPage);
 router.get("/privacy-policy", privacyPage);
 
 router.get("/terms-and-conditions", termsPage);
-
-router.get("/AdminAuth", adminAuthPage);
 
 router.get("/admin/adminPanel", adminPanelPage);
 
@@ -41,20 +39,8 @@ router.get("/edit/:id", editPage);
 
 router.post("/userMessage", nodemailerConfig);
 
-router.post("/subscribe", (req, res) => {
-  const subscribe = new subscribeSchema({
-    email: req.body.email,
-  });
+router.post("/subscribe", subscribe);
 
-  subscribe
-    .save()
-    .then(() => {
-      res.status(200).json({ message: "Subscription successful!" });
-    })
-    .catch((err) => {
-      res.status(500).json({ message: "Subscription failed!", error: err });
-    });
-});
-
+router.get("/Analytics", analyticsPage);
 
 module.exports = router;
