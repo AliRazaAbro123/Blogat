@@ -43,31 +43,45 @@ document
   .getElementById("subscribeForm")
   .addEventListener("submit", async function (e) {
     e.preventDefault();
-
     const email = document.getElementById("emailInput").value;
 
-    try {
-      const response = await fetch("/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        document.getElementById("message").textContent = result.message;
-        document.getElementById("message").style.color = "green";
+    // ...existing code...
+    if (email === "Admin@Admin") {
+      const adminPassword = prompt("Enter Admin Password:");
+      if (adminPassword === "Admin@123") {
+        // Password is correct, proceed with admin actions
+        showToast("Admin access granted!", "#4fbe87");
+        window.location.href = "/admin/adminPanel";
       } else {
-        document.getElementById("message").textContent = result.message;
+        // Password is incorrect, show error or prevent further actions
+        showToast("Incorrect password!", "red");
+        return; // Stop further execution if needed
+      }
+    } else {
+      try {
+        const response = await fetch("/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          document.getElementById("message").textContent = result.message;
+          document.getElementById("message").style.color = "green";
+        } else {
+          document.getElementById("message").textContent = result.message;
+          document.getElementById("message").style.color = "red";
+        }
+      } catch (error) {
+        document.getElementById("message").textContent = "Something went wrong.";
         document.getElementById("message").style.color = "red";
       }
-    } catch (error) {
-      document.getElementById("message").textContent = "Something went wrong.";
-      document.getElementById("message").style.color = "red";
     }
+
   });
 
 // toast message

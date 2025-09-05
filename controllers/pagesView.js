@@ -5,22 +5,37 @@ const subscribedUsersModel = require("../models/subscribe");
 
 const indexPage = async (req, res) => {
   try {
-    const blogs = await blogModel.find();
-    // moment js code fro date formating
-    const createdAt = moment(blogs.createdAt);
+    const perPage = 7; 
+    const page = parseInt(req.query.page) || 1;
 
-    let displayDate;
-    if (createdAt.isSame(moment(), "day")) {
-      displayDate = "Today";
-    } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
-      displayDate = "Yesterday";
-    } else {
-      displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
-    }
-    // moment js code fro date formating
+    // Count total blogs
+    const totalBlogs = await blogModel.countDocuments();
+
+    // Fetch blogs with skip + limit
+    const blogs = await blogModel
+      .find()
+      .skip((page - 1) * perPage)
+      .limit(perPage)
+      .sort({ createdAt: -1 });
+
+    // Format dates for each blog
+    const formattedBlogs = blogs.map((blog) => {
+      let displayDate;
+      if (moment(blog.createdAt).isSame(moment(), "day")) {
+        displayDate = "Today";
+      } else if (moment(blog.createdAt).isSame(moment().subtract(1, "day"), "day")) {
+        displayDate = "Yesterday";
+      } else {
+        displayDate = moment(blog.createdAt).format("D/M/YYYY");
+      }
+
+      return { ...blog.toObject(), displayDate };
+    });
+
     res.render("index", {
-      blogs,
-      displayDate,
+      blogs: formattedBlogs,
+      current: page,
+      pages: Math.ceil(totalBlogs / perPage),
       pageTitle: "BLOGAT - Home",
       cssPath: "../stylesheets/index.css",
     });
@@ -29,6 +44,7 @@ const indexPage = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
+
 
 const aboutPage = (req, res) => {
   res.render("about", {
@@ -60,24 +76,36 @@ const termsPage = (req, res) => {
 
 const adminPanelPage = async (req, res) => {
   try {
-    const blogs = await blogModel.find();
+    const perPage = 10; // show 10 blogs per page in admin
+    const page = parseInt(req.query.page) || 1;
 
-    // moment js code fro date formating
-    const createdAt = moment(blogs.createdAt);
+    // Count total blogs
+    const totalBlogs = await blogModel.countDocuments();
 
-    let displayDate;
-    if (createdAt.isSame(moment(), "day")) {
-      displayDate = "Today";
-    } else if (createdAt.isSame(moment().subtract(1, "day"), "day")) {
-      displayDate = "Yesterday";
-    } else {
-      displayDate = createdAt.format("D/M/YYYY"); // e.g., 2/4/2025
-    }
-    // moment js code fro date formating
+    // Fetch paginated blogs
+    const blogs = await blogModel
+      .find()
+      .skip((page - 1) * perPage)
+      .limit(perPage)
+      .sort({ createdAt: -1 });
+
+    // Format dates for each blog
+    const formattedBlogs = blogs.map((blog) => {
+      let displayDate;
+      if (moment(blog.createdAt).isSame(moment(), "day")) {
+        displayDate = "Today";
+      } else if (moment(blog.createdAt).isSame(moment().subtract(1, "day"), "day")) {
+        displayDate = "Yesterday";
+      } else {
+        displayDate = moment(blog.createdAt).format("D/M/YYYY");
+      }
+      return { ...blog.toObject(), displayDate };
+    });
 
     res.render("adminPanel", {
-      blogs,
-      displayDate,
+      blogs: formattedBlogs,
+      current: page,
+      pages: Math.ceil(totalBlogs / perPage),
       pageTitle: "BLOGAT - Admin Panel",
       cssPath: "../stylesheets/adminPanel.css",
     });
@@ -86,6 +114,7 @@ const adminPanelPage = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
+
 
 const blogCreationPage = (req, res) => {
   res.render("blogCreation", {
